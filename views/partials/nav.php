@@ -53,11 +53,11 @@
                   Services
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">APPARTMENT-TYPE LOTS</a></li>
-                <li><a class="dropdown-item" href="/services">LAWN LOTS</a></li>
-                <li><a class="dropdown-item" href="#">FAMILY STATES</a></li>
-                <li><a class="dropdown-item" href="#">INTERMENT</a></li>
-                <li><a class="dropdown-item" href="#">CREMATION</a></li>
+                <li><a class="dropdown-item" href="/apartment-typelots">APPARTMENT-TYPE LOTS</a></li>
+                <li><a class="dropdown-item" href="/lawnlots">LAWN LOTS</a></li>
+                <li><a class="dropdown-item" href="/familystates">FAMILY STATES</a></li>
+                <li><a class="dropdown-item" href="/interment">INTERMENT</a></li>
+                <li><a class="dropdown-item" href="/cremation">CREMATION</a></li>
               </ul>
             </li>
             <?php if ($_SESSION['user'] ?? false) : ?>

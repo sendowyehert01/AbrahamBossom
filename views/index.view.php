@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="container slider-container">
+    <div class="container ">
       <div class="products-services text-center">
         <h1>PRODUCTS & SERVICES</h1>
       </div>

@@ -6,7 +6,12 @@ $router->get('/', 'index.php');
 // $router->get('/note', 'notes/show.php');
 // $router->delete('/note', 'notes/destroy.php');
 
-$router->get('/services', 'lawnlots.php');
+
+$router->get('/apartment-typelots', 'apartment-typelots.php');
+$router->get('/lawnlots', 'lawnlots.php');
+$router->get('/familystates', 'familystates.php');
+$router->get('/interment', 'interment.php');
+$router->get('/cremation', 'cremation.php');
 $router->get('/payment', 'payment.php');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');

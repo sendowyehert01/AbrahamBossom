@@ -537,3 +537,15 @@ body {
     text-align: left;
   }
 }
+
+@media (max-width: 480px) {
+
+  .line {
+    width: 200px;
+    height: 1px;
+  }
+
+  .body-title {
+    font-size: 1.6rem;
+  }
+}
