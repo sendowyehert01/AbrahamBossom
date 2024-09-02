@@ -6,6 +6,7 @@ $router->get('/', 'index.php');
 // $router->get('/note', 'notes/show.php');
 // $router->delete('/note', 'notes/destroy.php');
 
+$router->get('/services', 'lawnlots.php');
 $router->get('/payment', 'payment.php');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');

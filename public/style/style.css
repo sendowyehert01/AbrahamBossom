@@ -21,6 +21,7 @@ body {
   line-height: 1.5;
   color: #555555;
   text-align: left;
+  
 }
 
 .icons {
@@ -197,6 +198,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
+  height: auto;
 }
 
 .banner .card-img-overlay p
@@ -221,7 +223,146 @@ body {
     z-index: 2;
 }
 
+/* landing body */
+
+.body-img {
+  padding: 20px;
+}
+
+.line {
+  width: 200px;
+  height: 3.5px;
+  background-color: darkgreen;
+  margin-bottom: 10px;
+}
+
+.body-title {
+  font-size: 2.3rem;
+  width: 600px;
+}
+
+.body-text {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.body-button {
+  padding: 10px 35px;
+  border-radius: 2px !important;
+}
+
+/* lawnslot */
+
+.top {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+  padding: 40px 94px;
+  width: 90%;
+  border-radius: 26px;
+  border: 2px solid rgb(168, 166, 166);
+  text-align: center;
+}
+
+
+.row .top p {
+  font-size: 24px;
+  line-height: 26px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
+
+.img-thumbnail {
+  object-fit: cover;
+  height: 100%;
+}
+
+.image-grid {
+  --gap:16px;
+  --num-cols:2;
+  --row-height:300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols),1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  
+
+  width: 80%;
+}
+
+.image-grid > img {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.first {
+  grid-area: 1/1/3/3;
+}
+
+.second {
+  border-bottom: 2px solid #222222;;
+}
+
+.last {
+  grid-area: 2/3/3/4;
+}
+
+.lawnpic {
+  border: 2px solid #222222;
+  
+}
+
+/* carousel */
+
+.slider-button {
+  padding: 6px 22px;
+  border-radius: 2px !important;
+}
+
 /* Responsive adjustments */
+
+
+@media screen and (max-width:1025px) {
+  .image-grid {
+    --num-cols:1;
+    --row-height:200px;
+  }
+
+  .main-card {
+    flex-direction: column;
+  }
+
+  .body-title {
+    padding-bottom: 0;
+  }
+   /* lawnslot */
+  .card-body {
+    padding-top: 0;
+    padding-left: 25px;
+  }
+
+  .body-img {
+    padding-bottom: 0;
+  }
+
+  .body-title {
+    width: 95%;
+  }
+
+  .line {
+    height: 2px;
+    width: 350px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .header {
     padding: 5px !important;
@@ -273,7 +414,22 @@ body {
   .centered-image {
       height: auto;
   }
+   /* lawnslot adjustment */
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slider-container {
+    width: 430px;
+  }
+
+  .card-text {
+    margin-bottom:20px !important;
+  }
+  
 }
+
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .nav-link {
@@ -371,5 +527,13 @@ body {
   }
   .icon {
       font-size: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  .card-text {
+    margin-bottom: 0;
+    text-align: left;
   }
 }

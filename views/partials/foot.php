@@ -40,10 +40,11 @@
     
     $("#owl-demo").owlCarousel({
       navigation : true,
+      
       items : 3,
-      itemsDesktop : [1000,5],
-      itemsDesktopSmall : [900,3],
-      itemsTablet: [600,2],
+      itemsDesktop : [1024, 2], // Change this line
+    itemsDesktopSmall : [900, 2],
+      itemsTablet: [768,1],
       itemsMobile : false
     });
 
