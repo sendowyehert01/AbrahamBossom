@@ -54,7 +54,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">APPARTMENT-TYPE LOTS</a></li>
-                <li><a class="dropdown-item" href="#">LAWN LOTS</a></li>
+                <li><a class="dropdown-item" href="/services">LAWN LOTS</a></li>
                 <li><a class="dropdown-item" href="#">FAMILY STATES</a></li>
                 <li><a class="dropdown-item" href="#">INTERMENT</a></li>
                 <li><a class="dropdown-item" href="#">CREMATION</a></li>
