@@ -22,19 +22,26 @@
             </div>
 
             <div class="d-flex gap-3">
-                <?php if ($_SESSION['user'] ?? false) : ?>
-                  <i class="bi bi-bell icons"></i>
-                  <i class="bi bi-search icons"></i>
-                  <i class="bi bi-person icons"></i>
-                  <form action="/sessions" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button class="btn nav-link h6">Log Out</button>
-                  </form>
-                <?php else : ?>
-                  <a href="/register" class="<?= isUrl('/register') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Register</a>
-                  <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
-                <?php endif; ?>
-            </div>
+  <?php if ($_SESSION['user'] ?? false) : ?>
+    <i class="bi bi-bell icons"></i>
+    <i class="bi bi-search icons"></i>
+    <div class="dropdown">
+      <i class="bi bi-person icons"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li>
+          <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="dropdown-item">Log Out</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  <?php else : ?>
+    <a href="/register" class="<?= isUrl('/register') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Register</a>
+    <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
+  <?php endif; ?>
+</div>
+
         </div>
     </header>
 
@@ -44,7 +51,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 mx-md-2">
+          <ul class="navbar-nav mb-2 mb-lg-0 mx-md-2 mt-3">
             <li class="nav-item mx-5">
               <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>

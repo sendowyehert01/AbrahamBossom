@@ -4,16 +4,16 @@
 
 
 <div class="row d-flex justify-content-center ">
-    <div class="top" style="background:green;">
+    <div class="top">
             <p>
             Lawn lots provide a peaceful, grassy area for traditional in-ground burials. Inclusions typically feature perpetual care, a flat grave marker, and well-maintained landscaping. 
             These serene spaces offer a tranquil environment for visiting and remembering loved ones.
             </p>
     </div>
     <div class="image-grid">
-        <img class="first" src="style/images/IMG_1403.PNG" alt="lawnlot" > 
-        <img class="second lawnpic" src="style/images/lawn1.png" alt="lawnlot" > 
-        <img class="last lawnpic" src="style/images/lawn2.png" alt="lawnlot"> 
+        <img class="first picsoflawn" src="style/images/IMG_1403.PNG" alt="lawnlot" > 
+        <img class="second lawnpic picsoflawn" src="style/images/lawn1.png" alt="lawnlot" > 
+        <img class="last lawnpic picsoflawn" src="style/images/lawn2.png" alt="lawnlot"> 
     </div>
 </div>
 

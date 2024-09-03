@@ -66,7 +66,7 @@
         <div class="container-sm p-3 slider-container" style="height:300px;" >
           <div class="card text-bg-dark" style="height:100%;" >
             <img src="style/images/IMG_1402.PNG" class="card-img" alt="..." style="height:100%;" >
-            <div class="card-img-overlay" style="padding:20px;">
+            <div class="card-img-overlay " style="padding:20px;">
               <h5 class="card-title">Apartment-Type Lot</h5>
               <p class="card-text py-3"  >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <a href="#" class="btn btn-success slider-button">READ MORE <i class="bi bi-arrow-right"></i></a>
@@ -99,7 +99,7 @@
         <div class="container-sm p-3 slider-container" style="height:300px;">
           <div class="card text-bg-dark" style="height:100%;">
             <img src="style/images/IMG_1402.PNG" class="card-img" alt="..." style="height:100%;">
-            <div class="card-img-overlay" style="padding:20px;">>
+            <div class="card-img-overlay " style="padding:20px;">
               <h5 class="card-title">Family State</h5>
               <p class="card-text py-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               <a href="#" class="btn btn-success slider-button">READ MORE <i class="bi bi-arrow-right"></i></a> 
