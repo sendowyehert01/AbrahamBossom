@@ -23,10 +23,75 @@
 
             <div class="d-flex gap-3">
   <?php if ($_SESSION['user'] ?? false) : ?>
-    <i class="bi bi-bell icons"></i>
+    <div class="dropdown">
+      <i class="bi bi-bell icons" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      
+      <ul class="dropdown-menu dropdown-notif" aria-labelledby="notificationDropdown">
+      <div class="notif" ><p>Notification</p></div>
+
+        <li class="d-flex align-items-center" style="width:100%;" >
+         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
+         <div class="dropdown-text">
+         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
+         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
+        </div> 
+         <div class="dropdown">
+           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
+             <li><a class="dropdown-item" href="#">Delete</a></li>
+           </ul>
+         </div>
+       </li> 
+       <li class="d-flex align-items-center" style="width:100%;" >
+         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
+         <div class="dropdown-text">
+         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
+         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
+        </div> 
+         <div class="dropdown">
+           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
+             <li><a class="dropdown-item" href="#">Delete</a></li>
+           </ul>
+         </div>
+       </li> 
+       <li class="d-flex align-items-center" style="width:100%;" >
+         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
+         <div class="dropdown-text">
+         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
+         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
+        </div> 
+         <div class="dropdown">
+           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
+             <li><a class="dropdown-item" href="#">Delete</a></li>
+           </ul>
+         </div>
+       </li> 
+       
+       <li class="d-flex align-items-center">
+         <div  style="padding-left:10px;background:white;"><img src="/assets/img/bell-notif.png " alt="...." style="width:44px;height:44px;" > </div>
+         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:20px;text-align:left;">Reservation Confirmed </a>
+          <div class="dropdown">
+           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:44px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
+             <li><a class="dropdown-item" href="#">Delete</a></li>
+           </ul>
+         </div>
+       </li>    
+
+
+
+        <div class="notif-button" style="margin-top:2px;width: 100%;"  ><button><p>See all notifications</p></button></div>
+      </ul>
+    </div>
     <i class="bi bi-search icons"></i>
     <div class="dropdown">
-      <i class="bi bi-person icons"  id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      <i class="bi bi-person icons" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <li>
           <form action="/sessions" method="POST">
@@ -41,6 +106,7 @@
     <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
   <?php endif; ?>
 </div>
+
 
         </div>
     </header>
@@ -60,11 +126,11 @@
                   Services
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/apartment-typelots">APPARTMENT-TYPE LOTS</a></li>
                 <li><a class="dropdown-item" href="/lawnlots">LAWN LOTS</a></li>
+                <li><a class="dropdown-item" href="/apartment-typelots" >APPARTMENT-TYPE LOTS</a></li>
                 <li><a class="dropdown-item" href="/familystates">FAMILY STATES</a></li>
                 <li><a class="dropdown-item" href="/interment">INTERMENT</a></li>
-                <li><a class="dropdown-item" href="/cremation">CREMATION</a></li>
+                <li><a class="dropdown-item" href="/cremation" style="margin-top:2px;" >CREMATION</a></li>
               </ul>
             </li>
             <?php if ($_SESSION['user'] ?? false) : ?>

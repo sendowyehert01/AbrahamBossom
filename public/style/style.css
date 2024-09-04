@@ -327,7 +327,72 @@ body {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
  }
 
+ .dropdown-menu {
+  background-color: rgba(38, 65, 28, 0.719);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  border: none;
+ }
 
+ .dropdown-menu .dropdown-item {
+  background-color: white;
+  padding: 10px 50px;
+  margin-top: 1px;
+  text-align: center;
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-notif {
+  background-color: rgba(249, 253, 255, 0.919);
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  height: max-content;
+}
+
+.dropdown-item{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.notif {
+  background-color: white;
+}
+
+.notif > p {
+  margin-bottom: 0;
+  padding: 7px 10px;
+  
+}
+
+.notif-button {
+  width: 100%;
+  border: none;
+
+}
+
+.notif-button > button > p {
+  color: #212529;
+}
+
+.notif-button > button {
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  margin: 0;
+  background-color: white;
+}
+
+.notif-button > button > p {
+ margin-bottom: 0%;
+ padding: 2px;
+}
 /* carousel */
 
 .slider-button {
