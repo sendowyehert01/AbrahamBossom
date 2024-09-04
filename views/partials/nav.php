@@ -26,65 +26,23 @@
     <div class="dropdown">
       <i class="bi bi-bell icons" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
       
-      <ul class="dropdown-menu dropdown-notif" aria-labelledby="notificationDropdown">
+      <ul class="dropdown-menu dropdown-notif" aria-labelledby="notificationDropdown"  >
       <div class="notif" ><p>Notification</p></div>
 
-        <li class="d-flex align-items-center" style="width:100%;" >
-         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
+        <li class="d-flex align-items-center dropdown-list"  >
+         <div class="notif-container"><img class="notif-img" src="/assets/img/bell-notif.png " alt="...."> </div>
          <div class="dropdown-text">
-         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
-         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
+         <a class="dropdown-item drop-items" href="#" >Payment Succesfull </a>
+         <p class="drop-text" >Your payment has been completed...</p>
         </div> 
          <div class="dropdown">
-           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
            <ul class="dropdown-menu">
              <li><a class="dropdown-item" href="#">Mark as Read</a></li>
              <li><a class="dropdown-item" href="#">Delete</a></li>
            </ul>
          </div>
        </li> 
-       <li class="d-flex align-items-center" style="width:100%;" >
-         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
-         <div class="dropdown-text">
-         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
-         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
-        </div> 
-         <div class="dropdown">
-           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
-           <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
-             <li><a class="dropdown-item" href="#">Delete</a></li>
-           </ul>
-         </div>
-       </li> 
-       <li class="d-flex align-items-center" style="width:100%;" >
-         <div  style="padding-left:10px;background:white;margin-top:2px;"><img src="/assets/img/bell-notif.png " alt="...." style="width:100%;height:57px;" > </div>
-         <div class="dropdown-text">
-         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:15px;text-align:left;padding-bottom:0;">Payment Succesfull </a>
-         <p style="font-size:12px;margin:0;background:white;padding-bottom:5px;padding-left:20px;" >Your payment has been completed...</p>
-        </div> 
-         <div class="dropdown">
-           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:57px;margin-top:2px;padding-left:6px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
-           <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
-             <li><a class="dropdown-item" href="#">Delete</a></li>
-           </ul>
-         </div>
-       </li> 
-       
-       <li class="d-flex align-items-center">
-         <div  style="padding-left:10px;background:white;"><img src="/assets/img/bell-notif.png " alt="...." style="width:44px;height:44px;" > </div>
-         <a class="dropdown-item" href="#" style="margin-top:2px;padding-left:20px;text-align:left;">Reservation Confirmed </a>
-          <div class="dropdown">
-           <i class="bi bi-three-dots-vertical d-flex align-items-center"  style="background:white;height:44px;" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
-           <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
-             <li><a class="dropdown-item" href="#">Delete</a></li>
-           </ul>
-         </div>
-       </li>    
-
-
 
         <div class="notif-button" style="margin-top:2px;width: 100%;"  ><button><p>See all notifications</p></button></div>
       </ul>
