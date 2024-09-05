@@ -22,19 +22,50 @@
             </div>
 
             <div class="d-flex gap-3">
-                <?php if ($_SESSION['user'] ?? false) : ?>
-                  <i class="bi bi-bell icons"></i>
-                  <i class="bi bi-search icons"></i>
-                  <i class="bi bi-person icons"></i>
-                  <form action="/sessions" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button class="btn nav-link h6">Log Out</button>
-                  </form>
-                <?php else : ?>
-                  <a href="/register" class="<?= isUrl('/register') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Register</a>
-                  <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
-                <?php endif; ?>
-            </div>
+  <?php if ($_SESSION['user'] ?? false) : ?>
+    <div class="dropdown">
+      <i class="bi bi-bell icons" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      
+      <ul class="dropdown-menu dropdown-notif" aria-labelledby="notificationDropdown"  >
+      <div class="notif" ><p>Notification</p></div>
+
+        <li class="d-flex align-items-center dropdown-list"  >
+         <div class="notif-container"><img class="notif-img" src="/assets/img/bell-notif.png " alt="...."> </div>
+         <div class="dropdown-text">
+         <a class="dropdown-item drop-items" href="#" >Payment Succesfull </a>
+         <p class="drop-text" >Your payment has been completed...</p>
+        </div> 
+         <div class="dropdown">
+           <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+           <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
+             <li><a class="dropdown-item" href="#">Delete</a></li>
+           </ul>
+         </div>
+       </li> 
+
+        <div class="notif-button" style="margin-top:2px;width: 100%;"  ><button><p>See all notifications</p></button></div>
+      </ul>
+    </div>
+    <i class="bi bi-search icons"></i>
+    <div class="dropdown">
+      <i class="bi bi-person icons" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li>
+          <form action="/sessions" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="dropdown-item">Log Out</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  <?php else : ?>
+    <a href="/register" class="<?= isUrl('/register') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Register</a>
+    <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
+  <?php endif; ?>
+</div>
+
+
         </div>
     </header>
 
@@ -44,7 +75,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0 mx-md-2">
+          <ul class="navbar-nav mb-2 mb-lg-0 mx-md-2 mt-3">
             <li class="nav-item mx-5">
               <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
@@ -53,11 +84,11 @@
                   Services
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/apartment-typelots">APPARTMENT-TYPE LOTS</a></li>
                 <li><a class="dropdown-item" href="/lawnlots">LAWN LOTS</a></li>
+                <li><a class="dropdown-item" href="/apartment-typelots" >APPARTMENT-TYPE LOTS</a></li>
                 <li><a class="dropdown-item" href="/familystates">FAMILY STATES</a></li>
                 <li><a class="dropdown-item" href="/interment">INTERMENT</a></li>
-                <li><a class="dropdown-item" href="/cremation">CREMATION</a></li>
+                <li><a class="dropdown-item" href="/cremation" style="margin-top:2px;" >CREMATION</a></li>
               </ul>
             </li>
             <?php if ($_SESSION['user'] ?? false) : ?>
