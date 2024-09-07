@@ -346,10 +346,21 @@ body {
     font-size:12px;
     margin:0;
     background:white;
-    padding-bottom:5px;
+    padding-top: 2px;
+    padding-bottom:4px;
     padding-left:20px;
     width:250px;
   }
+
+  .drop-head  {
+    background-color: rgba(249, 253, 255, 0.919);
+  }
+
+  .head-item {
+    padding: 7px 0px !important;
+    font-size: 13px;
+  }
+
 
  .dropdown-menu .dropdown-item {
   background-color: white;
@@ -365,6 +376,18 @@ body {
   margin-top:2px;
   padding-left:6px;
 }
+
+.dropdown-text:hover {
+  background-color: #f0f0f0; /* hover effect added */
+}
+
+.dropdown-text:hover .drop-items,
+.dropdown-text:hover .drop-item {
+  background-color: #f0f0f0; /* hover effect on both elements */
+}
+
+
+
 
 .dropdown-menu .dropdown-item:hover {
   background-color: #f1f1f1;

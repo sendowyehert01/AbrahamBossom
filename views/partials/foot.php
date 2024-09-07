@@ -28,7 +28,7 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    
     <!-- You can use latest version of jQuery  -->
     <script src="assets/js/jquery-1.9.1.min.js"></script>
 
@@ -49,6 +49,15 @@
     });
 
     });
+
+//    mark as read & delete
+    document.querySelectorAll('.drop-bi').forEach(item => {
+  item.addEventListener('click', event => {
+    event.stopPropagation();
+  });
+});
+
+
     </script>
 
 </body>

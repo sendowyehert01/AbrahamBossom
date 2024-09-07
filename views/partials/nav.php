@@ -12,7 +12,7 @@
                         <div class="img-container">
                             <img class="centered-image" src="style/images/452302525_2213886822325292_8888163133302808302_n.png" alt="logo">
                         </div>
-                        <div class="head-title">
+                        <div class="head-title ">
                             <h2 class="header-title">ABRAHAMS BOSOM</h2>
                             <hr>
                             <h3 class="header-subtitle">Memorial Garden</h3>
@@ -33,16 +33,18 @@
          <div class="notif-container"><img class="notif-img" src="/assets/img/bell-notif.png " alt="...."> </div>
          <div class="dropdown-text">
          <a class="dropdown-item drop-items" href="#" >Payment Succesfull </a>
-         <p class="drop-text" >Your payment has been completed...</p>
+         <p class="drop-text drop-item " >Your payment has been completed...</p>
         </div> 
          <div class="dropdown">
-           <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
-           <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Mark as Read</a></li>
-             <li><a class="dropdown-item" href="#">Delete</a></li>
+           <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown" ></i>
+           <ul class="dropdown-menu drop-head ">
+             <li class="li-item"><a class="dropdown-item head-item" href="#">Mark as Read</a></li>
+             <li class="li-item"><a class="dropdown-item head-item" href="#">Delete</a></li>
            </ul>
          </div>
        </li> 
+
+       
 
         <div class="notif-button" style="margin-top:2px;width: 100%;"  ><button><p>See all notifications</p></button></div>
       </ul>
