@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="d-flex gap-3">
+        <div class="d-flex gap-3">
   <?php if ($_SESSION['user'] ?? false) : ?>
     <div class="dropdown">
       <i class="bi bi-bell icons" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
@@ -62,13 +62,15 @@
       </ul>
     </div>
   <?php else : ?>
-    <a href="/register" class="<?= isUrl('/register') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Register</a>
-    <a href="/login" class="<?= isUrl('/login') ? "bg-gray-900 text-white" : "text-gray-300"; ?>">Login</a>
+    <a data-bs-toggle="modal" data-bs-target="#register-modal">Register</a>
+    <a data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
   <?php endif; ?>
 </div>
 
+<?php require base_path('views/sessions/create.view.php') ?>
+<?php require base_path('views/registration/create.view.php') ?>
 
-        </div>
+</div>
     </header>
 
     <nav class="navbar navbar-expand-lg bg-success">
