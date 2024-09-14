@@ -386,9 +386,6 @@ body {
   background-color: #f0f0f0; /* hover effect on both elements */
 }
 
-
-
-
 .dropdown-menu .dropdown-item:hover {
   background-color: #f1f1f1;
 }
@@ -460,6 +457,93 @@ body {
 .slider-button {
   padding: 6px 22px;
   border-radius: 2px !important;
+}
+
+.register {
+  cursor: pointer;
+}
+
+/* modals */
+
+.modal-content {
+  border-radius: 24px;
+  
+}
+
+.modal-header {
+  border-bottom: none;
+  display: flex;
+  margin-left: 15px;
+  padding-top: 0px;
+  
+}
+
+.modal-title{
+  font-size: 30px !important; 
+  font-weight: 700 !important;
+}
+
+.note {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.inputcontrol {
+  background: #f1f1f1;
+  border-radius: 15px;
+}
+
+.formlabel {
+  margin-bottom: 0;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.notes{
+  margin-bottom:0;
+  font-style: italic;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.closebtn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.close {
+  align-self: flex-end;
+}
+
+.logo > img {
+  width: 100px !important;
+  height: 100px !important;
+   border-radius: 32px;
+   margin-left: 15px;
+}
+
+.enter {
+  padding:5px 70px;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.outer {
+  padding-right: 0;
+  width: 100% !important;
+}
+
+.inner {
+  padding-right: 0;
 }
 
 /* Responsive adjustments */

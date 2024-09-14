@@ -62,8 +62,8 @@
       </ul>
     </div>
   <?php else : ?>
-    <a data-bs-toggle="modal" data-bs-target="#register-modal">Register</a>
-    <a data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
+    <a class="register" data-bs-toggle="modal" data-bs-target="#register-modal">Register</a>
+    <a class="register" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
   <?php endif; ?>
 </div>
 

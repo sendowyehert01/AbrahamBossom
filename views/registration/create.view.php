@@ -2,11 +2,18 @@
 
 <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-
+    <div class="modal-content" style="width:1000px">
+      
+    <div class="logo"><img src="./assets/img/logo.png" alt="">        
+    <div class="closebtn">
+      <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    </div>
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="note">
+      <p class="notes">Enter your details below to create your account and get started.</p>
       </div>
 
       <div class="modal-body">
@@ -15,19 +22,19 @@
           <form class="row g-3 needs-validation" id="regForm" action="/register" method="POST" novalidate>
 
             <!-- Circles which indicates the steps of the form: -->
-            <div class="text-center">
+            <!-- <div class="text-center">
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
-            </div>
+            </div> -->
 
-            <div class="tab row">
-              <div class="row">
+            <div class="tab row outer">
+              <div class="row inner">
                 <div class="col-md-6">
                   <div class="col-md-12">
-                    <label for="validationCustom03" class="form-label">First Name</label>
-                    <input type="text" name="first_name" class="form-control" id="validationCustom03" required>
+                    <label for="validationCustom03" class="form-label formlabel">Last Name</label>
+                    <input type="text" name="first_name" class="form-control inputcontrol" placeholder="Last name" id="validationCustom03" required>
                     <?php if (isset($errors['first_name'])) : ?>
                       <div class="text-danger">
                         <p><?= $errors['first_name'] ?></p>
@@ -35,8 +42,8 @@
                     <?php endif; ?>
                   </div>
                   <div class="col-md-12">
-                    <label for="validationCustom03" class="form-label">Last Name</label>
-                    <input type="text" name="last_name" class="form-control" id="validationCustom03" required>
+                    <label for="validationCustom03" class="form-label formlabel">First Name</label>
+                    <input type="text" name="last_name" class="form-control inputcontrol" placeholder="First name" id="validationCustom03" required>
                     <?php if (isset($errors['last_name'])) : ?>
                       <div class="text-danger">
                         <p><?= $errors['last_name'] ?></p>
@@ -45,8 +52,8 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Middle Initial</label>
-                      <input type="text" name="middle" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom03" class="form-label formlabel">Middle Initial</label>
+                      <input type="text" name="middle" class="form-control inputcontrol" id="validationCustom03" required>
                       <?php if (isset($errors['middle'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['middle'] ?></p>
@@ -54,8 +61,8 @@
                       <?php endif; ?>
                     </div>
                     <div class="col-md-6">
-                    <label for="validationDefault04" class="form-label">Gender</label>
-                    <select class="form-select" id="validationDefault04" required>
+                    <label for="validationDefault04" class="form-label formlabel">Gender</label>
+                    <select class="form-select inputcontrol" id="validationDefault04" required>
                       <option selected value="">Choose...</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -71,8 +78,8 @@
                 <div class="col-md-6">
                   <div class="row">
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Suffix</label>
-                      <input type="text" name="suffix" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom03" class="form-label formlabel">Suffix</label>
+                      <input type="text" name="suffix" class="form-control inputcontrol" id="validationCustom03" >
                       <?php if (isset($errors['suffix'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['suffix'] ?></p>
@@ -80,8 +87,8 @@
                       <?php endif; ?>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Date of Birth</label>
-                      <input type="date" name="birth_date" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom03" class="form-label formlabel">Date of Birth</label>
+                      <input type="date" name="birth_date" class="form-control inputcontrol" id="validationCustom03" required>
                       <?php if (isset($errors['birth_date'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['birth_date'] ?></p>
@@ -90,8 +97,8 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                      <label for="validationCustom03" class="form-label">Address</label>
-                      <input type="text" name="address" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom03" class="form-label formlabel">Address</label>
+                      <input type="text" name="address" class="form-control inputcontrol" placeholder="Adress" id="validationCustom03" required>
                       <?php if (isset($errors['address'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['address'] ?></p>
@@ -99,8 +106,8 @@
                       <?php endif; ?>
                   </div>
                   <div class="col-md-12">
-                      <label for="validationCustom03" class="form-label">Deceased Relative Name</label>
-                      <input type="text" name="relative_name" class="form-control" id="validationCustom03" required>
+                      <label for="validationCustom03" class="form-label formlabel">Deceased Relative Name</label>
+                      <input type="text" name="relative_name" class="form-control inputcontrol" placeholder="Enter Deceased Name..." id="validationCustom03" required>
                       <?php if (isset($errors['relative_name'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['relative_name'] ?></p>
@@ -141,10 +148,11 @@
               </div>
             </div>
 
-            <div class="modal-footer text-center">
-                <button type="button" class="btn btn-secondary" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" class="btn btn-success" id="nextBtn" onclick="nextPrev(1)">Next</button>
-            </div>
+            <div class="modal-footer w-100 d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary back" id="prevBtn" onclick="nextPrev(-1)">BACK</button>
+    <button type="button" class="btn btn-success enter" id="nextBtn" onclick="nextPrev(1)">ENTER</button>
+</div>
+
 
           </form>
         </div>
