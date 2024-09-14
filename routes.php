@@ -17,6 +17,8 @@ $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');
 $router->get('/contact', 'contact.php');
 
+
+
 // $router->get('/notes/create', 'notes/create.php');
 // $router->post('/notes/store', 'notes/store.php');\
 // $router->get('/notes/edit', 'notes/edit.php');
