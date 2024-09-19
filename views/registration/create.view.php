@@ -22,12 +22,12 @@
           <form class="row g-3 needs-validation" id="regForm" action="/register" method="POST" novalidate>
 
             <!-- Circles which indicates the steps of the form: -->
-            <!-- <div class="text-center">
+            <div class="text-center guide">
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
-            </div> -->
+            </div>
 
             <div class="tab row outer">
               <div class="row inner">
@@ -98,7 +98,7 @@
                   </div>
                   <div class="col-md-12">
                       <label for="validationCustom03" class="form-label formlabel">Address</label>
-                      <input type="text" name="address" class="form-control inputcontrol" placeholder="Adress" id="validationCustom03" required>
+                      <input type="text" name="address" class="form-control inputcontrol" placeholder="Address" id="validationCustom03" required>
                       <?php if (isset($errors['address'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['address'] ?></p>
