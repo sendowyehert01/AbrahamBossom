@@ -4,24 +4,24 @@
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content" style="width:1000px">
       
-    <div class="logo"><img src="./assets/img/logo.png" alt="">        
-    <div class="closebtn">
-      <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-    </div>
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
-      </div>
-      <div class="note">
-      <p class="notes">Enter your details below to create your account and get started.</p>
-      </div>
+        <div class="logo"><img src="./assets/img/logo.png" alt="">        
+          <div class="closebtn">
+            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
+        </div>
+        <div class="note">
+            <p class="notes">Enter your details below to create your account and get started.</p>
+        </div>
 
       <div class="modal-body">
 
         <div class="container w-100 mx-auto">
           <form class="row g-3 needs-validation" id="regForm" action="/register" method="POST" novalidate>
 
-            <!-- Circles which indicates the steps of the form: -->
+            <!-- Circles which indicates the steps of the form: (visibility: hidden) -->
             <div class="text-center guide">
               <span class="step"></span>
               <span class="step"></span>

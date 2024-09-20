@@ -29,7 +29,7 @@ body {
 
 
 
-.top {
+.tops {
     background-color: white;
     border: 1px #666666 solid;
     width: 340px;
@@ -359,7 +359,7 @@ body {
         padding-top: 230px;
     }
 
-    .top {
+    .tops {
         
         position: absolute;
         top: 140px;
