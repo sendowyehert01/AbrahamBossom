@@ -29,3 +29,160 @@ input.invalid {
 .step.finish {
   background-color: #04AA6D;
 }
+
+.modal-content-login {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+
+.top-container {
+  position: relative;
+  left: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 310px;
+  background-color: white;
+  padding: 30px 20px;
+  color: darkgreen;
+  border-radius: 25px;
+  font-family: sans-serif;
+  border: 1px solid gainsboro;
+  box-shadow: rgba(255, 255, 255, 0.774) 0px 0px 60px -12px, rgba(0, 0, 0, 0.3) 0px 0px 36px -18px;
+}
+
+.bottom-container {
+  position: relative;
+  display: flex;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 380px;
+  background-image:  url("./images/cemetery\ background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 85px 60px;
+  padding-bottom: 20px;
+  color: white;
+  border-radius: 25px;
+  font-family: sans-serif;
+  box-shadow: rgba(255, 255, 255, 0.56) 0px 22px 70px 4px;
+}
+
+.top-container > form {
+ width: 90%;
+}
+
+
+.bottom-container > h2 {
+  text-align: center;
+}
+
+.forgot {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.top-container > form > .clearfix {
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-container > a {
+  color: white;
+  text-decoration: none;
+  
+}
+
+.get {
+  margin-top: 100px;
+}
+
+.got {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap:10px
+}
+
+.upicon{
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.phone {
+  display: flex;
+justify-content: center;
+align-items: center;
+  padding: 0 !important;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border: 1 solid #555555 !important;
+  background-color: white;
+}
+
+.formCont {
+  height: 45px !important;
+  font-size: 12px;
+  background-color: #f1f1f1;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.sign-btn{
+  background-color:rgb(20, 121, 20) ;
+  border-radius: 20px;
+  padding: 10px 40px;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-transfarency {
+  background-color: hsla(120, 100%, 20%, 0.7);
+}
+
+@media (max-width: 990px) {
+
+    .modal-content-login {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-container {
+     position: relative;
+     top: 100px;
+     left: 1px;
+    }
+
+    .bottom-container {
+      justify-content: flex-end;
+      padding-top: 250px;
+      padding-bottom: 30px;
+      bottom: 110px;
+      width: 350px;
+    }
+
+    .get {
+      margin-top: 10px;
+    }
+
+     
+   .btn-transfarency {
+   margin-top: 10px !important;
+   }
+
+}
