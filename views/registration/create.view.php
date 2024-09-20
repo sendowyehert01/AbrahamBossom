@@ -3,6 +3,21 @@
 <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content" style="width:1000px">
+
+     
+        <div class="logo"><img src="./assets/img/logo.png" alt="">        
+          <div class="closebtn">
+            <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
+        </div>
+        
+        <div class="note">
+            <p class="notes">Enter your details below to create your account and get started.</p>
+        </div>
+
       <div class="modal-body">
 
         <div class="container w-100 mx-auto">
@@ -68,12 +83,16 @@
                       <?php endif; ?>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationDefault04" class="form-label formlabel">Gender</label>
-                      <select class="form-select inputcontrol" id="validationDefault04" required>
-                        <option selected value="">Choose...</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                      </select>
+
+                    <label for="validationDefault04" class="form-label formlabel">Gender</label>
+                    <select class="form-select inputcontrol" id="validationDefault04">
+                      <option selected value="">Choose...</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+
+                 
+
                       <?php if (isset($errors['gender'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['gender'] ?></p>
