@@ -3,19 +3,6 @@
 <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content" style="width:1000px">
-      
-    <div class="logo"><img src="./assets/img/logo.png" alt="">        
-    <div class="closebtn">
-      <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-    </div>
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
-      </div>
-      <div class="note">
-      <p class="notes">Enter your details below to create your account and get started.</p>
-      </div>
-
       <div class="modal-body">
 
         <div class="container w-100 mx-auto">
@@ -26,10 +13,30 @@
               <span class="step"></span>
               <span class="step"></span>
               <span class="step"></span>
-              <span class="step"></span>
             </div>
 
+            <div class="tab row">
+              <div>Unang page</div>
+            </div>
+
+            <div class="tab row">
+              <div>Dito OTP!</div>
+            </div>
+
+
             <div class="tab row outer">
+              <div class="logo"><img src="./assets/img/logo.png" alt="">
+                <div class="closebtn">
+                  <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              </div>
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
+              </div>
+              <div class="note">
+                <p class="notes">Enter your details below to create your account and get started.</p>
+              </div>
+
               <div class="row inner">
                 <div class="col-md-6">
                   <div class="col-md-12">
@@ -61,12 +68,12 @@
                       <?php endif; ?>
                     </div>
                     <div class="col-md-6">
-                    <label for="validationDefault04" class="form-label formlabel">Gender</label>
-                    <select class="form-select inputcontrol" id="validationDefault04" required>
-                      <option selected value="">Choose...</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                    </select>
+                      <label for="validationDefault04" class="form-label formlabel">Gender</label>
+                      <select class="form-select inputcontrol" id="validationDefault04" required>
+                        <option selected value="">Choose...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
                       <?php if (isset($errors['gender'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['gender'] ?></p>
@@ -79,7 +86,7 @@
                   <div class="row">
                     <div class="col-md-6">
                       <label for="validationCustom03" class="form-label formlabel">Suffix</label>
-                      <input type="text" name="suffix" class="form-control inputcontrol" id="validationCustom03" >
+                      <input type="text" name="suffix" class="form-control inputcontrol" id="validationCustom03">
                       <?php if (isset($errors['suffix'])) : ?>
                         <div class="text-danger">
                           <p><?= $errors['suffix'] ?></p>
@@ -97,22 +104,22 @@
                     </div>
                   </div>
                   <div class="col-md-12">
-                      <label for="validationCustom03" class="form-label formlabel">Address</label>
-                      <input type="text" name="address" class="form-control inputcontrol" placeholder="Address" id="validationCustom03" required>
-                      <?php if (isset($errors['address'])) : ?>
-                        <div class="text-danger">
-                          <p><?= $errors['address'] ?></p>
-                        </div>
-                      <?php endif; ?>
+                    <label for="validationCustom03" class="form-label formlabel">Address</label>
+                    <input type="text" name="address" class="form-control inputcontrol" placeholder="Address" id="validationCustom03" required>
+                    <?php if (isset($errors['address'])) : ?>
+                      <div class="text-danger">
+                        <p><?= $errors['address'] ?></p>
+                      </div>
+                    <?php endif; ?>
                   </div>
                   <div class="col-md-12">
-                      <label for="validationCustom03" class="form-label formlabel">Deceased Relative Name</label>
-                      <input type="text" name="relative_name" class="form-control inputcontrol" placeholder="Enter Deceased Name..." id="validationCustom03" required>
-                      <?php if (isset($errors['relative_name'])) : ?>
-                        <div class="text-danger">
-                          <p><?= $errors['relative_name'] ?></p>
-                        </div>
-                      <?php endif; ?>
+                    <label for="validationCustom03" class="form-label formlabel">Deceased Relative Name</label>
+                    <input type="text" name="relative_name" class="form-control inputcontrol" placeholder="Enter Deceased Name..." id="validationCustom03" required>
+                    <?php if (isset($errors['relative_name'])) : ?>
+                      <div class="text-danger">
+                        <p><?= $errors['relative_name'] ?></p>
+                      </div>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -149,9 +156,9 @@
             </div>
 
             <div class="modal-footer w-100 d-flex justify-content-center">
-    <button type="button" class="btn btn-secondary back" id="prevBtn" onclick="nextPrev(-1)">BACK</button>
-    <button type="button" class="btn btn-success enter" id="nextBtn" onclick="nextPrev(1)">ENTER</button>
-</div>
+              <button type="button" class="btn btn-secondary back" id="prevBtn" onclick="nextPrev(-1)">BACK</button>
+              <button type="button" class="btn btn-success enter" id="nextBtn" onclick="nextPrev(1)">ENTER</button>
+            </div>
 
 
           </form>
