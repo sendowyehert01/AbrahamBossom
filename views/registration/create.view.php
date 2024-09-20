@@ -3,7 +3,7 @@
 <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content" style="width:1000px">
-      
+      <!-- start -->
         <div class="logo"><img src="./assets/img/logo.png" alt="">        
           <div class="closebtn">
             <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -12,10 +12,11 @@
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="register-modal-label">SIGN UP</h1>
         </div>
+        
         <div class="note">
             <p class="notes">Enter your details below to create your account and get started.</p>
         </div>
-
+<!-- end -->
       <div class="modal-body">
 
         <div class="container w-100 mx-auto">
@@ -62,7 +63,7 @@
                     </div>
                     <div class="col-md-6">
                     <label for="validationDefault04" class="form-label formlabel">Gender</label>
-                    <select class="form-select inputcontrol" id="validationDefault04" required>
+                    <select class="form-select inputcontrol" id="validationDefault04">
                       <option selected value="">Choose...</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
@@ -149,9 +150,9 @@
             </div>
 
             <div class="modal-footer w-100 d-flex justify-content-center">
-    <button type="button" class="btn btn-secondary back" id="prevBtn" onclick="nextPrev(-1)">BACK</button>
-    <button type="button" class="btn btn-success enter" id="nextBtn" onclick="nextPrev(1)">ENTER</button>
-</div>
+              <button type="button" class="btn btn-secondary back" id="prevBtn" onclick="nextPrev(-1)">BACK</button>
+              <button type="button" class="btn btn-success enter" id="nextBtn" onclick="nextPrev(1)">ENTER</button>
+            </div>
 
 
           </form>
