@@ -8,7 +8,7 @@
         <div class="container w-100 mx-auto">
           <form class="row g-3 needs-validation" id="regForm" action="/register" method="POST" novalidate>
 
-            <!-- Circles which indicates the steps of the form: -->
+            <!-- Circles which indicates the steps of the form: (visibility: hidden) -->
             <div class="text-center guide">
               <span class="step"></span>
               <span class="step"></span>
