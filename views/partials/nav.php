@@ -70,6 +70,7 @@
 
 <?php require base_path('views/sessions/create.view.php') ?>
 <?php require base_path('views/registration/create.view.php') ?>
+<?php require base_path('views/registration/forgot.view.php') ?>
 
 </div>
     </header>
