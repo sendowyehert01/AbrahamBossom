@@ -9,7 +9,7 @@
       ],
       'account' => [
         'username' => 'root',
-        'password' => ''
+        'password' => 'passw0rdGcG!'
       ]
     ];
 
