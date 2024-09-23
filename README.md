@@ -16,8 +16,6 @@ $ composer install
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Testing
-
 ### For running a web server
 
 ``` bash
