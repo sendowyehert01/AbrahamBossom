@@ -62,15 +62,13 @@
       </ul>
     </div>
   <?php else : ?>
-    <a class="register" data-bs-toggle="modal" data-bs-target="#register-modal">Register</a>
+    <a class="register" href="/register">Register</a>
     <a class="register" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
   <?php endif; ?>
 
 </div>
 
 <?php require base_path('views/sessions/create.view.php') ?>
-<?php require base_path('views/registration/create.view.php') ?>
-<?php require base_path('views/registration/forgot.view.php') ?>
 
 </div>
     </header>

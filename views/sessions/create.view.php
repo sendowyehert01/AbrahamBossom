@@ -6,7 +6,7 @@
 
     <div class="top-container">
         <h2>SIGN IN</h2>
-        <form action="/sessions" method="post" >
+        <form action="/sessions" method="post">
                    <div class="icons upicon mt-4">
                        <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-telephone-fill"></i></a>
                        <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-instagram"></i></a>
@@ -15,9 +15,19 @@
                <div class="form-group">
                    <input name="email" type="text" class="form-control formCont" placeholder="Enter email.." required="required">
                </div>
+               <?php if (isset($errors['email'])) : ?>
+                  <div class="text-danger">
+                    <p><?= $errors['email'] ?></p>
+                  </div>
+                <?php endif; ?>
                <div class="form-group mt-3">
                    <input name="password" type="password" class="form-control formCont" placeholder="Enter password.." required="required">
                </div>
+               <?php if (isset($errors['password'])) : ?>
+                  <div class="text-danger">
+                    <p><?= $errors['password'] ?></p>
+                  </div>
+                <?php endif; ?>
                <div class="clearfix mt-3 ">
                    <a href="#" class="forgot got ">Forgot Password?</a>
                </div>        
