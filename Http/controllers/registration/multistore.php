@@ -53,7 +53,7 @@ if ($user) {
   
 } else {
 
-  $db->query("INSERT INTO users(first_name, last_name, gender, middle, suffix, birth_date, address, relative_name, email, password) VALUES(:first_name, :last_name, :gender, :middle, :suffix, :birth_date, :address, :relative_name, :email, :password)", [
+  $db->query("INSERT INTO users(first_name, last_name, gender, middle, suffix, birth_date, address, relative_name, email, password) VALUES(:firstname, :lastname, :gender, :middle, :suffix, :birth_date, :address, :relative_name, :email, :password)", [
     'firstname'=> $first_name,
     'lastname'=> $last_name,
     'gender' => $gender,
