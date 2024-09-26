@@ -22,17 +22,12 @@ $db = App::resolve('Core\Database');
 $auth = new Authenticator();
 
 $email = $_POST['email'];
-// $password = $_POST['password'];
 
 $errors = [];
 
   if (! Validator::email($email)) {
     $errors['email'] = "Please provide a valid email.";
   }
-
-  // if (! Validator::string($password, 7 , 255)) {
-  //   $errors['password'] = "Please provide a password of atleast 7 characters.";
-  // }
 
   if (! empty($errors)) {
     return view('registration/create.view.php', [
@@ -56,7 +51,7 @@ if ($user) {
   }
   
 } else {
-
+  
   // $db->query("INSERT INTO users(email, password) VALUES(:email, :password)", [
   //   'email'=> $email,
   //   'password' => password_hash($password, PASSWORD_BCRYPT),
@@ -64,6 +59,7 @@ if ($user) {
 
   // $auth->login($user);
 
+  $_SESSION['LAST_ACTIVITY'] = time();
   $_SESSION['pin'] = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
   try {
@@ -72,15 +68,15 @@ if ($user) {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'odnes12@gmail.com';                     //SMTP username
-    $mail->Password   = 'mtju ccuq nwec jkgy';                               //SMTP password
+    $mail->Username   = 'abrahambossom123@gmail.com';                     //SMTP username
+    $mail->Password   = 'ypuh pelz gzmn ihrq';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('odnes12@gmail.com', 'Abraham Bossom');
+    $mail->setFrom('abrahambossom123@gmail.com', 'Abraham Bossom');
     $mail->addAddress($email);                                  //Add a recipient
-    $mail->addReplyTo('odnes12@gmail.com', 'Abraham Bossom');
+    $mail->addReplyTo('abrahambossom123@gmail.com', 'Abraham Bossom');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 

@@ -37,8 +37,13 @@ $errors = [];
     $errors['password'] = "Please provide a password of atleast 7 characters.";
   }
 
+  if ($password !== $confirm_pass) {
+    $errors['password'] = "Password does not match! ";
+    $errors['confirm_pass'] = "Password does not match! ";
+  }
+
   if (! empty($errors)) {
-    return view('registration/create.view.php', [
+    return view('registration/multiform.view.php', [
       'heading' => 'Register',
       'errors' => $errors,
     ]);
@@ -48,7 +53,7 @@ $errors = [];
 
 
 if ($user) {
-  header('location: /');
+  header('location: /multiform');
   die();
   
 } else {

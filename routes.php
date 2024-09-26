@@ -12,7 +12,7 @@ $router->get('/lawnlots', 'lawnlots.php');
 $router->get('/familystates', 'familystates.php');
 $router->get('/interment', 'interment.php');
 $router->get('/cremation', 'cremation.php');
-$router->get('/payment', 'payment.php');
+$router->get('/payment', 'payment.php')->only('auth');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');
 $router->get('/contact', 'contact.php');
@@ -20,14 +20,14 @@ $router->get('/contact', 'contact.php');
 
 
 // $router->get('/notes/create', 'notes/create.php');
-// $router->post('/notes/store', 'notes/store.php');\
+// $router->post('/notes/store', 'notes/store.php');
 // $router->get('/notes/edit', 'notes/edit.php');
 // $router->patch('/notes', 'notes/update.php');
 
 $router->get('/register', 'registration/create.php');
 $router->post('/register', 'registration/store.php');
-$router->get('/otp', 'registration/otp.php');
-$router->post('/otp', 'registration/otpstore.php');
+$router->get('/otp', 'registration/otp.php')->only('otp');;
+$router->post('/otp', 'registration/otpstore.php')->only('otp');;
 $router->get('/multiform', 'registration/multiform.php');
 $router->post('/multiform', 'registration/multistore.php');
 

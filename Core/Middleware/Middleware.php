@@ -3,12 +3,14 @@
 namespace Core\Middleware;
 use Core\Middleware\Guest;
 use Core\Middleware\Auth;
+use Core\Middleware\Otp;
 
 class Middleware
 {
   public const MAP = [
     'guest' => Guest::class,
     'auth' => Auth::class,
+    'otp' => Otp::class,
   ];
 
   public static function resolve($key) {

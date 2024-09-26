@@ -19,19 +19,19 @@
         <div class="col-md-6">
           <div class="col-md-12">
             <label for="validationCustom03" class="form-label formlabel">Last Name</label>
-            <input type="text" name="first_name" class="form-control inputcontrol" placeholder="Last name" id="validationCustom03" required>
-            <?php if (isset($errors['first_name'])) : ?>
+            <input type="text" name="last_name" class="form-control inputcontrol" placeholder="Last name" id="validationCustom03" required>
+            <?php if (isset($errors['last_name'])) : ?>
               <div class="text-danger">
-                <p><?= $errors['first_name'] ?></p>
+                <p><?= $errors['last_name'] ?></p>
               </div>
            <?php endif; ?>
           </div>
           <div class="col-md-12">
             <label for="validationCustom03" class="form-label formlabel">First Name</label>
-            <input type="text" name="last_name" class="form-control inputcontrol" placeholder="First name" id="validationCustom03" required>
-            <?php if (isset($errors['last_name'])) : ?>
+            <input type="text" name="first_name" class="form-control inputcontrol" placeholder="First name" id="validationCustom03" required>
+            <?php if (isset($errors['first_name'])) : ?>
               <div class="text-danger">
-                <p><?= $errors['last_name'] ?></p>
+                <p><?= $errors['first_name'] ?></p>
               </div>
             <?php endif; ?>
           </div>
@@ -114,7 +114,7 @@
         <h2 class="name">USERNAME AND PASSWORD</h2>
       </div>
       <div class="col-md-11 mt-4 ">
-        <label for="validationCustom03" class="form-label labeL">Username</label>
+        <label for="validationCustom03" class="form-label labeL">Email</label>
         <input type="text" name="email" class="form-control inpuT" id="validationCustom03" required>
         <?php if (isset($errors['email'])) : ?>
           <div class="text-danger">
@@ -174,3 +174,6 @@
 </div>
 
 <script src="js/script.js"></script>
+
+</body>
+</html>
