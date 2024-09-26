@@ -63,25 +63,23 @@ if ($user) {
   $_SESSION['pin'] = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
 
   try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'abrahambossom123@gmail.com';                     //SMTP username
-    $mail->Password   = 'ypuh pelz gzmn ihrq';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Recipients
+    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'abrahambossom123@gmail.com';
+    $mail->Password   = 'ypuh pelz gzmn ihrq';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 465;
+
     $mail->setFrom('abrahambossom123@gmail.com', 'Abraham Bossom');
-    $mail->addAddress($email);                                  //Add a recipient
+    $mail->addAddress($email);
     $mail->addReplyTo('abrahambossom123@gmail.com', 'Abraham Bossom');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>' . $_SESSION['pin'] . '</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
