@@ -14,6 +14,19 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require base_path('vendor/autoload.php');
 
+use Dotenv\Dotenv;
+
+// Load .env file
+$dotenv = Dotenv::createImmutable(base_path('/'));
+$dotenv->load();
+
+// Access the variables
+$gmailUser = $_ENV['GMAIL'];
+$gmailPass = $_ENV['PASS'];
+
+//Load Composer's autoloader
+require base_path('vendor/autoload.php');
+
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -68,14 +81,14 @@ if ($user) {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'abrahambossom123@gmail.com';
-    $mail->Password   = 'ypuh pelz gzmn ihrq';
+    $mail->Username   = $gmailUser;
+    $mail->Password   = $gmailPass;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
-    $mail->setFrom('abrahambossom123@gmail.com', 'Abraham Bossom');
+    $mail->setFrom($gmailUser, 'Abraham Bossom');
     $mail->addAddress($email);
-    $mail->addReplyTo('abrahambossom123@gmail.com', 'Abraham Bossom');
+    $mail->addReplyTo($gmailUser, 'Abraham Bossom');
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 
