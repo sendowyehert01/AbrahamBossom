@@ -2,13 +2,13 @@
 
 $router->get('/', 'index.php');
 
-// $router->get('/notes', 'notes/index.php')->only('auth');
+$router->get('/services', 'services/index.php');
 // $router->get('/note', 'notes/show.php');
 // $router->delete('/note', 'notes/destroy.php');
 
 
 $router->get('/apartment-typelots', 'apartment-typelots.php');
-$router->get('/lawnlots', 'lawnlots.php');
+$router->get('/service', 'services.php');
 $router->get('/familystates', 'familystates.php');
 $router->get('/interment', 'interment.php');
 $router->get('/cremation', 'cremation.php');
@@ -19,10 +19,10 @@ $router->get('/contact', 'contact.php');
 
 
 
-// $router->get('/notes/create', 'notes/create.php');
-// $router->post('/notes/store', 'notes/store.php');
-// $router->get('/notes/edit', 'notes/edit.php');
-// $router->patch('/notes', 'notes/update.php');
+$router->get('/services/create', 'services/create.php');
+$router->post('/services/store', 'services/store.php');
+$router->get('/notes/edit', 'notes/edit.php');
+$router->patch('/notes', 'notes/update.php');
 
 $router->get('/register', 'registration/create.php');
 $router->post('/register', 'registration/store.php');
