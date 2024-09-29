@@ -41,7 +41,6 @@
         <a href="#" class="forgot">Don't have an account?</a>
         <button type="submit" class="btn btn-success btn-block sign-btn btn-transfarency mt-5" data-bs-toggle="modal" data-bs-target="#login-modal">SIGN UP</button>
         <a href="/" class="forgot get">For guest only, Click here.</a>
-
     </div>
       
    

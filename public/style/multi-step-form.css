@@ -87,7 +87,7 @@ input.invalid {
   align-items: center;
   flex-direction: column;
   width: 380px;
-  background-image:  url("./images/cemetery\ background.png");
+  background-image:  url("./images/cemeterybackground.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 85px 60px;
