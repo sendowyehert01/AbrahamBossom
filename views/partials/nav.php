@@ -53,6 +53,7 @@
     <div class="dropdown">
       <i class="bi bi-person icons" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a href="/user-profile" class="dropdown-item">My Profile</a></li>
         <li>
           <form action="/sessions" method="POST">
             <input type="hidden" name="_method" value="DELETE">
@@ -89,7 +90,7 @@
               </a>
               <ul class="dropdown-menu">
                 <?php foreach ($services as $service) { ?>
-                  <li><a class="dropdown-item" href="/service?id=<?= $service['id'] ?>"><?= $service['name'] ?></a></li>
+                  <li><a class="dropdown-item" href="/services?id=<?= $service['id'] ?>"><?= $service['name'] ?></a></li>
                 <?php } ?>
               </ul>
             </li>

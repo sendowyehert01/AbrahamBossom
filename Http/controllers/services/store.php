@@ -33,7 +33,7 @@ $errors = [];
     $db->query("INSERT INTO services(name, price, description) VALUES(:name, :price, :description)", ['name' => $_POST['name'] , 'price' => $_POST['price'], 'description'=> $_POST['description']]);
   }
 
-  header('location: /services');
+  header('location: /services-offer');
   die();
 
 ?>

@@ -32,5 +32,5 @@ $errors = [];
       'body' => $_POST['body'],
     ]);
 
-    header('location: /notes');
+    header('location: /services-offer');
     die();

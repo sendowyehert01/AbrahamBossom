@@ -2,27 +2,19 @@
 
 $router->get('/', 'index.php');
 
-$router->get('/services', 'services/index.php');
-// $router->get('/note', 'notes/show.php');
-// $router->delete('/note', 'notes/destroy.php');
+$router->get('/services-offer', 'services/index.php');
+$router->get('/service-offer', 'services/show.php');
+$router->delete('/service-offer', 'services/destroy.php');
+$router->get('/services-offer/create', 'services/create.php');
+$router->post('/services-offer/store', 'services/store.php');
+$router->get('/services-offer/edit', 'services/edit.php');
+$router->patch('/services-offer', 'services/update.php');
 
-
-$router->get('/apartment-typelots', 'apartment-typelots.php');
-$router->get('/service', 'services.php');
-$router->get('/familystates', 'familystates.php');
-$router->get('/interment', 'interment.php');
-$router->get('/cremation', 'cremation.php');
+$router->get('/services', 'services.php');
 $router->get('/payment', 'payment.php')->only('auth');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');
 $router->get('/contact', 'contact.php');
-
-
-
-$router->get('/services/create', 'services/create.php');
-$router->post('/services/store', 'services/store.php');
-$router->get('/notes/edit', 'notes/edit.php');
-$router->patch('/notes', 'notes/update.php');
 
 $router->get('/register', 'registration/create.php');
 $router->post('/register', 'registration/store.php');
@@ -35,5 +27,7 @@ $router->post('/multiform', 'registration/multistore.php');
 $router->get('/login', 'sessions/create.php');
 $router->post('/sessions', 'sessions/store.php');
 $router->delete('/sessions', 'sessions/destroy.php')->only('auth');
+
+$router->get('/user-profile', 'users/users.php')->only('auth');
 
 ?>  

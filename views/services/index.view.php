@@ -6,14 +6,14 @@
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <ul>
         <?php /** @var array<string, array> $notes */ ?>
-        <?php foreach($notes as $note) : ?>
-          <a href="/note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
-            <li><?= htmlspecialchars($note['name']) ?></li>
+        <?php foreach($services as $service) : ?>
+          <a href="/service-offer?id=<?= $service['id'] ?>" class="text-blue-500 hover:underline">
+            <li><?= htmlspecialchars($service['name']) ?></li>
           </a>
         <?php endforeach; ?>
       </ul>
       <p class="mt-6">
-        <a href="/services/create" class="text-blue-500 underline">Create Service</a>
+        <a href="/services-offer/create" class="text-blue-500 underline">Create Service</a>
       </p>
     </div>
   </main>

@@ -9,5 +9,5 @@ $services = $db->query('SELECT * FROM services')->get();
 
 view('services/index.view.php', [
   'heading' => 'My Services',
-  'notes' => $services,
+  'services' => $services,
 ]);

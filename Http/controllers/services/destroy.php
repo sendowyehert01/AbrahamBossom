@@ -6,14 +6,13 @@ use Core\Response;
 
 $db = App::resolve('Core\Database');
 
-$currentUser = 2;
+// $currentUser = 2;
 
-$note = $db->query("SELECT * FROM notes WHERE id = :id", ['id' => $_GET['id']])->findOrFail();
+$service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['id']])->findOrFail();
 
-authorize($note['user_id'] === $currentUser);
+// authorize($note['user_id'] === $currentUser);
 
-$db->query("DELETE from notes where id = :id", [ 'id' =>  $_GET['id'] ]);
+$db->query("DELETE from services where id = :id", [ 'id' =>  $_GET['id'] ]);
 
-header('location: /notes');
+header('location: /services-offer');
 exit();
-
