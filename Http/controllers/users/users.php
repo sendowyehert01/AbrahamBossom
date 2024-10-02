@@ -6,7 +6,7 @@ use Core\Response;
 
 $db = App::resolve('Core\Database');
 
-// $currentUser = 2;
+// $currentUser = $_GET['id'];
 
 $user = $db->query("SELECT * FROM users WHERE id = :id", ['id' => $_GET['id']])->findOrFail();
 

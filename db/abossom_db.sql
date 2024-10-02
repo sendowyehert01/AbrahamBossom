@@ -19,6 +19,24 @@
 CREATE DATABASE IF NOT EXISTS `abossom_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `abossom_db`;
 
+-- Dumping structure for table abossom_db.services
+CREATE TABLE IF NOT EXISTS `services` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `price` int DEFAULT NULL,
+  `description` text COLLATE utf8mb4_general_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table abossom_db.services: ~5 rows (approximately)
+DELETE FROM `services`;
+INSERT INTO `services` (`id`, `name`, `price`, `description`) VALUES
+	(1, 'LAWN LOT\'S', 1000000, 'Our lawn lots provide a tranquil, landscaped setting, offering a peaceful resting place for your loved ones in a well-maintained environment. '),
+	(2, 'APARTMENT-TYPE LOTS', 1000000, 'Our apartment-type lots offer a secure and elevated final resting place, thoughtfully designed for lasting dignity and peaceful remembrance. '),
+	(3, 'FAMILY STATES', 1000000, 'Our family estates offer spacious, private areas that can accommodate generations, creating a serene and exclusive resting place for your family’s legacy. '),
+	(4, 'INTERMENT', 1000000, 'Our interment services ensure a respectful and efficient burial process, handled with the utmost care and attention to detail, giving families peace of mind during difficult times. '),
+	(5, 'CREMATION', 1000000, 'Our cremation services offer a respectful and environmentally conscious alternative, providing a dignified space for families to honor and remember their loved ones. ');
+
 -- Dumping structure for table abossom_db.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -36,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table abossom_db.users: ~1 rows (approximately)
+-- Dumping data for table abossom_db.users: ~2 rows (approximately)
 DELETE FROM `users`;
 INSERT INTO `users` (`id`, `position`, `first_name`, `last_name`, `middle`, `gender`, `suffix`, `birth_date`, `address`, `relative_name`, `email`, `password`) VALUES
 	(1, 'guest', 'Testing', 'Testing', 'e.', 'Male', 'N/A', '2024-09-24', 'Tseign', 'tesitng', 'odnes12@gmail.com', '$2y$10$YgiPJ8Dcv/w1aodRmE89SucLH1gv3QkRCZ0SvNKrESCmLdrdpBexG'),

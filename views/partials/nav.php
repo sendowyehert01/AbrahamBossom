@@ -53,7 +53,7 @@
     <div class="dropdown">
       <i class="bi bi-person icons" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></i>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a href="/user-profile" class="dropdown-item">My Profile</a></li>
+        <li><a href="/user-profile?id=<?= $_SESSION['user']['id'] ?>" class="dropdown-item">My Profile</a></li>
         <li>
           <form action="/sessions" method="POST">
             <input type="hidden" name="_method" value="DELETE">

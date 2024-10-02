@@ -10,9 +10,9 @@
         </div>
         <div class="d-flex justify-content-center p-0 m-0">
             <div>
-                <h4 class="text-center p-0 m-0">Phone: 978-454-5191</h4>
+                <h4 class="text-center p-0 m-0">Phone: 0956-850-8440 / 0947-201-3665</h4>
                 <h4 class="text-center p-0 m-0">Email: abrahamsbosom@gmail.com</h4>
-                <h4 class="text-center p-0 m-0">Address: 77 Knapp Avenue, Lowell, MA 01852</h4>
+                <h4 class="text-center p-0 m-0">Address: Km 46 Aguinaldo Hwy, Lauaan St. Lalaan, Silang, Cavite, 4118</h4>
             </div>
         </div>
         <div class="container d-flex justify-content-center p-0">
