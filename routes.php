@@ -23,11 +23,9 @@ $router->post('/otp', 'registration/otpstore.php')->only('otp');;
 $router->get('/multiform', 'registration/multiform.php');
 $router->post('/multiform', 'registration/multistore.php');
 
-
 $router->get('/login', 'sessions/create.php');
 $router->post('/sessions', 'sessions/store.php');
 $router->delete('/sessions', 'sessions/destroy.php')->only('auth');
-
-$router->get('/user-profile', 'users/users.php')->only('auth');
+$router->get('/user-profile', 'sessions/show.php')->only('auth');
 
 ?>  

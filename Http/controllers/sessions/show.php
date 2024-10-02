@@ -6,12 +6,12 @@ use Core\Response;
 
 $db = App::resolve('Core\Database');
 
-// $currentUser = $_GET['id'];
+$currentUser = $_SESSION['user']['id'];
 
 $user = $db->query("SELECT * FROM users WHERE id = :id", ['id' => $_GET['id']])->findOrFail();
 
-// authorize($note['user_id'] === $currentUser);
+authorize($user['id'] === $currentUser);
 
-view('user/profile.view.php', [
+view('sessions/profile.view.php', [
   'user' => $user
 ]);
