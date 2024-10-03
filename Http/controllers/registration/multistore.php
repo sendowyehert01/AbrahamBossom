@@ -71,6 +71,8 @@ if ($user) {
     'password' => password_hash($password, PASSWORD_BCRYPT),
   ]);
 
+  $user = $db->query("SELECT * FROM users where email = :email", ['email' => $email])->find();
+
   Authenticator::login($user);
 
   header('location: /');
