@@ -30,6 +30,6 @@ Session::flash('old', [
   'password' => $password,
 ]);
 
-return redirect('/');
+return redirect('/login');
 
 ?>

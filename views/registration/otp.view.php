@@ -35,7 +35,7 @@
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="fifth" maxlength="1"> 
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="sixth" maxlength="1"> 
                 </div> 
-              <div class="mt-4"> 
+              <div class="mt-4 d-flex justify-content-center"> 
                   <button class="btn btn-success validate"><p>SUBMIT</p></button> 
               </div> 
             </form>

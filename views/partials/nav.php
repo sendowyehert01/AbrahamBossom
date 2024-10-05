@@ -10,7 +10,7 @@
                 <div class="d-flex justify-content-center p-0 m-0">
                     <div class="title d-flex align-items-center">
                         <div class="img-container">
-                            <img class="centered-image" src="style/images/452302525_2213886822325292_8888163133302808302_n.png" alt="logo">
+                            <img class="centered-image" src="style/images/logo_no_bg.png" alt="logo">
                         </div>
                         <div class="head-title ">
                             <h2 class="header-title">ABRAHAMS BOSOM</h2>
@@ -64,17 +64,15 @@
     </div>
   <?php else : ?>
     <a class="register" href="/register">Register</a>
-    <a class="register" data-bs-toggle="modal" data-bs-target="#login-modal">Login</a>
+    <a class="login" href="/login">Login</a>
   <?php endif; ?>
 
 </div>
 
-<?php require base_path('views/sessions/create.view.php') ?>
-
 </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg bg-success mb-3">
+    <nav class="navbar navbar-expand-lg bg-success">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

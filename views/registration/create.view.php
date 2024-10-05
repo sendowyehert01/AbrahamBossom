@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="style/signup.css">
 
     <div class="signup-container">
-      
         <div class="top-signup">
            <form action="/register" method="post" >
                <h2 class="text-center">SIGN UP</h2>   
@@ -36,14 +35,13 @@
            <div class="bottom">
                   <h2 class="text-center welcome">WELCOME TO <br>ABMG!</h2>   
                 <div class="clearfix mt-3 ">
-                  <a href="#" class="forgot">Already have an account?</a>
+                  <a href="/login" class="forgot text-white">Already have an account?</a>
                 </div>        
                 <div class="form-group mt-5 d-flex justify-content-center">
-                   <button type="submit" class="btn btn-success btn-block sign-btn mt-4" > SIGN IN </button>
-                   
+                   <a href="/login" class="btn btn-success btn-block sign-btn mt-4"> SIGN IN </a>
                 </div>
                 <div class="clearfix guest">
-                   <a href="#" class="forgot">For guest only, Click here.</a>
+                   <a href="/" class="forgot text-white">For guest only, <strong>Click here</strong>.</a>
                 </div>        
            </div>
         </div>

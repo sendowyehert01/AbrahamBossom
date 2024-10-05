@@ -1,0 +1,405 @@
+body {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.top-container {
+  width: fit-content;
+  height: fit-content;
+}
+
+
+
+.tops {
+  background-color: white;
+  border: 1px #666666 solid;
+  width: 340px;
+  font-size: 15px;
+  padding: 30px;
+  border-radius: 30px;
+  padding-top: 20px;
+  z-index: 3;
+  position: relative;
+  left: 30px;
+
+}
+
+.top-signup {
+  background-color: white;
+  border: 1px #666666 solid;
+  width: 340px;
+  font-size: 15px;
+  padding: 30px;
+  border-radius: 30px;
+  padding-top: 20px;
+  z-index: 3;
+  position: relative;
+  right: 30px;
+
+}
+
+.para {
+  color: white !important;
+}
+
+
+.bottom {
+  z-index: 2;
+  width: 420px;
+  font-size: 15px;
+  padding: 30px;
+  border-radius: 30px;
+  padding-bottom: 10px !important;
+  background-image: url("./images/cemeterybackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.guest {
+  margin-top:100px !important;
+}
+
+.welcome {
+  margin-top: 40px;
+  color: white !important;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap:10px
+}
+
+.upicon{
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.phone {
+  display: flex;
+justify-content: center;
+align-items: center;
+  padding: 0 !important;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border: 1 solid #555555 !important;
+  background-color: white;
+}
+
+.form-control {
+  height: 50px;
+  background-color: #f1f1f1;
+}
+
+.clearfix {
+  text-align: center;
+}
+
+.text-center {
+  color: darkgreen;
+}
+
+.forgot {
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+  font-weight: 200px;
+}
+
+.sign-btn{
+  background-color:rgb(20, 121, 20) ;
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border: none;
+  font-weight: 600;
+}
+
+.sign-btn:hover{
+  background-color:rgba(17, 143, 17, 0.7) ;
+}
+
+.position-relative {
+  position: relative !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 450px;
+  border: 1px solid rgb(221, 220, 220);
+  height: 280px;
+  box-shadow: 0px 5px 20px 0px #d2dae3;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+}
+
+.validate {
+  border-radius: 20px;
+  height: 35px;
+  width: 110px !important;
+  background-color: rgb(2, 61, 2);
+  border: 1px solid rgb(2, 61, 2);
+  font-size:16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.validate > p {
+  width: fit-content;
+  margin: 0%;
+  font-weight: 500;
+}
+
+.text-center > h6 {
+  color: #444444;
+  font-size: small;
+  margin-bottom: 0;
+  
+}
+
+.modal-head {
+  background-image: url("./image/modalhead.png");
+  width: 450px;
+  height: 80px;
+  align-self: flex-start;
+  position: relative;
+  bottom: 19px;
+  right: 10px;
+  border-radius: 20px;
+  opacity: 70%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.envelope{
+height: 60px;
+width: 60px;
+background-color: transparent;
+border: 3px solid white;
+border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.modal-title > H1{
+color: white;
+font-size: 30px;
+}
+
+.inputpass {
+  width: 340px;
+  height: 37px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.labelpass {
+  font-size: 12px;
+  text-align: left;
+}
+
+.pass-card {
+  padding-bottom: 10px;
+}
+
+.pass-modal {
+  position: relative;
+  bottom: 100px !important;
+}
+
+.val-container {
+  margin-top: 14px !important;
+}
+
+.pass-validate {
+ height: 30px;
+ font-size:14px;
+}
+
+.recovery {
+  display: flex;
+  justify-content: start;
+}
+
+.reco-modal {
+  position: relative;
+  top: 1px;
+  margin-bottom: 50px;
+}
+
+.pro-modal {
+  position: relative;
+  top: 1px;
+  margin-bottom: 20px;
+}
+
+.reco-validate {
+  width: 140px !important;
+  height: 27px;
+  font-size: 14px;
+}
+
+.process-input {
+  border-radius: 10px;
+  border: 1px solid gray;
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-size: 10px;
+}
+
+.success-pass {
+  width: 220px !important;
+  height: 30px;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+
+  .card{
+      width: 350px;
+  }
+
+  .modal-head{
+      width: 350px;
+      position: relative;
+      bottom: 26px;
+  }
+
+  .envelope {
+      width: 50px;
+      height: 50px;
+  }
+
+  .envelope > .env-img {
+      width: 37px !important;
+      height: 35px !important;
+  }
+
+  
+
+
+  .modal-title > h1 {
+      font-size: 20px;
+  }
+
+
+  .validate {
+      width: 100px !important;
+      height: 27px;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  .validate > p {
+      font-size: 13px;
+  }
+
+  .inputpass {
+      width: 250px;
+      height:30px
+  }
+
+  .success-pass > p {
+      font-size: 10px !important;
+      
+      
+  }
+
+  .success-pass {
+      padding: 10px 20px;
+      width: 150px !important;
+  }
+
+  .top-container {
+      width: fit-content;
+  }
+
+  .register-container {
+      width: fit-content;
+  }
+
+  .bottom {
+     position: relative;
+      width: 330px;
+      height: 470px;
+      padding-bottom: 0 !important;
+      padding-top: 230px;
+  }
+
+  .tops {
+      
+      position: absolute;
+      top: 140px;
+      left: 45px;
+      height: 270px;
+      width: 300px;
+  }
+
+  .text-center {
+      font-size: 20px;
+      
+  }
+
+  .icons {
+      margin: 10px !important;
+  }
+
+  .control {
+      height: 30px;
+      width: 200px;
+      font-size: 12px;
+  }
+
+  .form-group {
+      display: flex;
+      justify-content: center;
+  }
+
+  .clearfix {
+      margin: 5px 10px 0px 10px  !important;
+      
+  }
+
+  .sign-btn {
+      font-size: 12px;
+      padding: 5px 25px;
+  }
+
+ .form-sign {
+  margin-top: 0 !important;
+  margin-bottom: 30px;
+ }
+}

@@ -2,7 +2,7 @@
         <div class="d-flex justify-content-center p-0 m-0">
             <div class="title">
                 <div class="img-container">
-                    <img class="centered-image" src="style/images/452302525_2213886822325292_8888163133302808302_n.png" alt="logo">
+                    <img class="centered-image" src="style/images/logo_no_bg.png" alt="logo">
                 </div>
                 <h2 class="footer-title p-0 m-0">ABRAHAMS BOSOM</h2>
                 <h5 class="footer-subtitle p-0 m-0">Memorial Garden</h5>
