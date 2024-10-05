@@ -16,6 +16,7 @@ class Authenticator
             $this->login([
               'id' => $users['id'],
               'email' => $email,
+              'position' => $users['position'],
             ]);
 
             return true;
@@ -29,6 +30,7 @@ class Authenticator
     $_SESSION['user'] = [
       'id' => $user['id'],
       'email' => $user['email'],
+      'position' => $user['position'],
     ];
   
     session_regenerate_id();

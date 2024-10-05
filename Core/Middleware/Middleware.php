@@ -4,6 +4,7 @@ namespace Core\Middleware;
 use Core\Middleware\Guest;
 use Core\Middleware\Auth;
 use Core\Middleware\Otp;
+use Core\Middleware\Admin;
 
 class Middleware
 {
@@ -11,6 +12,7 @@ class Middleware
     'guest' => Guest::class,
     'auth' => Auth::class,
     'otp' => Otp::class,
+    'admin' => Admin::class,
   ];
 
   public static function resolve($key) {

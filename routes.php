@@ -2,13 +2,15 @@
 
 $router->get('/', 'index.php');
 
-$router->get('/services-offer', 'services/index.php');
-$router->get('/service-offer', 'services/show.php');
-$router->delete('/service-offer', 'services/destroy.php');
-$router->get('/services-offer/create', 'services/create.php');
-$router->post('/services-offer/store', 'services/store.php');
-$router->get('/services-offer/edit', 'services/edit.php');
-$router->patch('/services-offer', 'services/update.php');
+$router->get('/admin', 'admin/index.php')->only('admin');
+
+$router->get('/services-offer', 'services/index.php')->only('admin');
+$router->get('/service-offer', 'services/show.php')->only('admin');
+$router->delete('/service-offer', 'services/destroy.php')->only('admin');
+$router->get('/services-offer/create', 'services/create.php')->only('admin');
+$router->post('/services-offer/store', 'services/store.php')->only('admin');
+$router->get('/services-offer/edit', 'services/edit.php')->only('admin');
+$router->patch('/services-offer', 'services/update.php')->only('admin');
 
 $router->get('/services', 'services.php');
 $router->get('/payment', 'payment.php')->only('auth');
