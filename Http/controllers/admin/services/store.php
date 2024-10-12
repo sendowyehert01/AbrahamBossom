@@ -23,7 +23,7 @@ $errors = [];
   }
 
   if (! empty($errors)) {
-    return view('services/create.view.php', [
+    return view('admin/services/create.view.php', [
       'heading' => 'Create Service',
       'errors' => $errors,
     ]);
@@ -33,7 +33,7 @@ $errors = [];
     $db->query("INSERT INTO services(name, price, description) VALUES(:name, :price, :description)", ['name' => $_POST['name'] , 'price' => $_POST['price'], 'description'=> $_POST['description']]);
   }
 
-  header('location: /services-offer');
+  header('location: /admin/services');
   die();
 
 ?>

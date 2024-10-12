@@ -12,7 +12,7 @@ $service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['i
 
 // authorize($note['user_id'] === $currentUser);
 
-view('services/edit.view.php', [
+view('admin/services/edit.view.php', [
   'heading' => 'Edit Service',
   'service' => $service
 ]);

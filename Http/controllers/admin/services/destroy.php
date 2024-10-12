@@ -12,7 +12,7 @@ $service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['i
 
 // authorize($note['user_id'] === $currentUser);
 
-view('services/show.view.php', [
-  'heading' => 'Service',
-  'service' => $service,
-]);
+$db->query("DELETE from services where id = :id", [ 'id' =>  $_GET['id'] ]);
+
+header('location: /admin/services');
+exit();

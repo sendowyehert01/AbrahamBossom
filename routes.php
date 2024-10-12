@@ -4,13 +4,13 @@ $router->get('/', 'index.php');
 
 $router->get('/admin', 'admin/index.php')->only('admin');
 
-$router->get('/services-offer', 'services/index.php')->only('admin');
-$router->get('/service-offer', 'services/show.php')->only('admin');
-$router->delete('/service-offer', 'services/destroy.php')->only('admin');
-$router->get('/services-offer/create', 'services/create.php')->only('admin');
-$router->post('/services-offer/store', 'services/store.php')->only('admin');
-$router->get('/services-offer/edit', 'services/edit.php')->only('admin');
-$router->patch('/services-offer', 'services/update.php')->only('admin');
+$router->get('/admin/services', 'admin/services/index.php')->only('admin');
+$router->get('/admin/service', 'admin/services/show.php')->only('admin');
+$router->delete('/admin/service', 'admin/services/destroy.php')->only('admin');
+$router->get('/admin/services/create', 'admin/services/create.php')->only('admin');
+$router->post('/admin/services/store', 'admin/services/store.php')->only('admin');
+$router->get('/admin/services/edit', 'admin/services/edit.php')->only('admin');
+$router->patch('/admin/services/update', 'admin/services/update.php')->only('admin');
 
 $router->get('/services', 'services.php');
 $router->get('/payment', 'payment.php')->only('auth');

@@ -13,6 +13,14 @@ if ($form->validate($email, $password)) {
   $auth = new Authenticator();
 
   if ($auth->attemp($email, $password)) {
+
+      $position = $_SESSION['user']['position'];
+
+      if ($position !== 'guest')
+      {
+        redirect('/admin');
+      }
+
       redirect('/');
   }
 

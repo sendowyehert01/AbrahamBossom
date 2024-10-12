@@ -7,7 +7,7 @@ $db = new Database($config['database'], $config['account']['username'], $config[
 
 $services = $db->query('SELECT * FROM services')->get();
 
-view('services/index.view.php', [
+view('admin/services/index.view.php', [
   'heading' => 'My Services',
   'services' => $services,
 ]);
