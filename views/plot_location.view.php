@@ -35,7 +35,7 @@
                       <p class="help-block text-danger"></p>
                   </div>
                   <div>
-                      <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">Send
+                      <button class="btn btn-success font-weight-bold py-3 px-5 w-100" type="submit" id="sendMessageButton">Send
                           Message</button>
                   </div>
               </form>
