@@ -37,14 +37,19 @@
                     </li>
                     <li>
                         <a href="/admin/services" class="nav-link px-0 align-middle text-white">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Services</span>
+                            <i class="fs-4 bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin/staffs" class="nav-link px-0 align-middle text-white">
+                            <i class="fs-4 bi bi-person"></i> <span class="ms-1 d-none d-sm-inline">Staffs</span>
                         </a>
                     </li>
                     <li>
                         <a href="/admin/orders" class="nav-link px-0 align-middle text-white">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="/admin" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
@@ -55,8 +60,8 @@
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
@@ -73,7 +78,7 @@
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
