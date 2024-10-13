@@ -17,5 +17,6 @@ $service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['i
 
 view('service.view.php', [
   'heading' => $service['name'],
+  'description' => $service['description'],  //MC
   'services' => $services
 ]);
