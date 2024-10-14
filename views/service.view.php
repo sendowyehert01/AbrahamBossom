@@ -9,7 +9,7 @@
     <div class="top">
         <p><?= $description ?></p>
     </div>
-    <div class="image-grid">
+    <div class="image-grid container">
         <img class="first picsoflawn" src="style/images/IMG_1403.PNG" alt="lawnlot">
         <img class="second lawnpic picsoflawn" src="style/images/lawn1.png" alt="lawnlot">
         <img class="last lawnpic picsoflawn" src="style/images/lawn2.png" alt="lawnlot">

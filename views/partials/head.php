@@ -14,5 +14,13 @@
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
 
     <link rel="stylesheet" href="style/style.css">
+
+    <style>
+
+    body {
+        overflow-x: hidden;
+    }
+
+    </style>
 </head>
 <body>

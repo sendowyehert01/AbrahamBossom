@@ -14,8 +14,22 @@
     <!-- -------------------------------------------------------------------------------------------------- -->
 
     <link rel="stylesheet" href="style/admin-style.css">
+
+    <style>
+        .active-link {
+            color: #ffc107 !important;
+        }
+
+        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+            background-color: #1a8754 !important;
+        }
+    </style>
 </head>
 <body>
+
+<?php
+$current_page = basename($_SERVER['REQUEST_URI'], ".php");
+?>
 
 <div class="container-fluid">
     <div class="row flex-nowrap">
@@ -25,30 +39,32 @@
                     <span class="fs-5 d-none d-sm-inline">Menu</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link align-middle px-0 text-white">
+                <li class="nav-item">
+                        <a href="/" class="nav-link align-middle px-0 <?= $current_page == 'index' ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin" class="nav-link px-0 align-middle text-white">
+                        <a href="/admin" class="nav-link px-0 align-middle <?= $current_page == 'admin' ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/services" class="nav-link px-0 align-middle text-white">
+                        <a href="/admin/services" class="nav-link px-0 align-middle <?= strpos($current_page, 'services') !== false ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Services</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/staffs" class="nav-link px-0 align-middle text-white">
+                        <a href="/admin/staffs" class="nav-link px-0 align-middle <?= strpos($current_page, 'staffs') !== false ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi bi-person"></i> <span class="ms-1 d-none d-sm-inline">Staffs</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/orders" class="nav-link px-0 align-middle text-white">
+                        <a href="/admin/orders" class="nav-link px-0 align-middle <?= strpos($current_page, 'orders') !== false ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
                     </li>
+                   
+                   
                     <!-- <li>
                         <a href="/admin" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
@@ -80,7 +96,7 @@
                         </ul>
                     </li> -->
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle text-white">
+                        <a href="/admin/customers" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
                             <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
                     </li>
                 </ul>
