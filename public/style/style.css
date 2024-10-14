@@ -46,8 +46,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
-
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: rgb(243, 247, 240);
   font-size: 1rem;
   font-weight: 400;
