@@ -20,6 +20,14 @@ $router->get('/admin/staffs/create', 'admin/staffs/create.php')->only('admin');
 $router->post('/admin/staffs/store', 'admin/staffs/store.php')->only('admin');
 $router->get('/admin/staffs/edit', 'admin/staffs/edit.php')->only('admin');
 $router->patch('/admin/staffs/update', 'admin/staffs/update.php')->only('admin');
+// CUSTOMERS ROUTES -------------------------------------------------------------------------
+$router->get('/admin/customers', 'admin/customers/index.php')->only('admin');
+$router->get('/admin/customer', 'admin/customers/show.php')->only('admin');
+$router->delete('/admin/customer', 'admin/customers/destroy.php')->only('admin');
+$router->get('/admin/customers/create', 'admin/customers/create.php')->only('admin');
+$router->post('/admin/customers/store', 'admin/customers/store.php')->only('admin');
+$router->get('/admin/customers/edit', 'admin/customers/edit.php')->only('admin');
+$router->patch('/admin/customers/update', 'admin/customers/update.php')->only('admin');
 
 $router->get('/services', 'services.php');
 $router->get('/payment', 'payment.php')->only('auth');
