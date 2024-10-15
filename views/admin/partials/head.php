@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
 
     <!-- Data Table CSS ----------------------------------------------------------------------------------- -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    </style>
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <!-- -------------------------------------------------------------------------------------------------- -->
 
@@ -20,52 +22,58 @@
             color: #ffc107 !important;
         }
 
-        .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
             background-color: #1a8754 !important;
         }
     </style>
 </head>
+
 <body>
 
-<?php
-$current_page = basename($_SERVER['REQUEST_URI'], ".php");
-?>
+    <?php
+    $current_page = basename($_SERVER['REQUEST_URI'], ".php");
+    ?>
 
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-success">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                <li class="nav-item">
-                        <a href="/" class="nav-link align-middle px-0 <?= $current_page == 'index' ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin" class="nav-link px-0 align-middle <?= $current_page == 'admin' ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/services" class="nav-link px-0 align-middle <?= strpos($current_page, 'services') !== false ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Services</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/staffs" class="nav-link px-0 align-middle <?= strpos($current_page, 'staffs') !== false ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi bi-person"></i> <span class="ms-1 d-none d-sm-inline">Staffs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/admin/orders" class="nav-link px-0 align-middle <?= strpos($current_page, 'orders') !== false ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
-                    </li>
-                   
-                   
-                    <!-- <li>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-success">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <div class="mt-4">
+                            <h4 style="color: white">ABRAHAMS BOSOM</h4>
+                            <hr>
+                            <h5 style="color: white">Memorial Garden</h5>
+                        </div>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link align-middle px-0 <?= $current_page == 'index' ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin" class="nav-link px-0 align-middle <?= $current_page == 'admin' ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/services" class="nav-link px-0 align-middle <?= strpos($current_page, 'services') !== false ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi bi-gear"></i> <span class="ms-1 d-none d-sm-inline">Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/staffs" class="nav-link px-0 align-middle <?= strpos($current_page, 'staffs') !== false ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi bi-person"></i> <span class="ms-1 d-none d-sm-inline">Staffs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/admin/orders" class="nav-link px-0 align-middle <?= strpos($current_page, 'orders') !== false ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
+                        </li>
+
+
+                        <!-- <li>
                         <a href="/admin" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
@@ -77,7 +85,7 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
                             </li>
                         </ul>
                     </li> -->
-                    <!-- <li>
+                        <!-- <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
@@ -95,26 +103,26 @@ $current_page = basename($_SERVER['REQUEST_URI'], ".php");
                             </li>
                         </ul>
                     </li> -->
-                    <li>
-                        <a href="/admin/customers" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1"><?= $_SESSION['user']['email'] ?></span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item text-dark" href="#">New project...</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Settings</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Profile</a></li>
                         <li>
-                            <hr class="dropdown-divider text-dark p-0 m-0">
+                            <a href="/admin/customers" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
                         </li>
-                        <li><a class="dropdown-item text-dark" href="#">Sign out</a></li>
                     </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1"><?= $_SESSION['user']['email'] ?></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item text-dark" href="#">New project...</a></li>
+                            <li><a class="dropdown-item text-dark" href="#">Settings</a></li>
+                            <li><a class="dropdown-item text-dark" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider text-dark p-0 m-0">
+                            </li>
+                            <li><a class="dropdown-item text-dark" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
