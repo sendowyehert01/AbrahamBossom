@@ -10,6 +10,6 @@ $db = App::resolve('Core\Database');
 $services = $db->query('SELECT * FROM services')->get();
 
 view('about.view.php', [
-  'heading' => 'ABOUT',
+  'heading' => 'ABOUT US',
   'services' => $services
 ]);
