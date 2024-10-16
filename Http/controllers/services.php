@@ -1,22 +1,26 @@
-<?php 
-
+<?php
 use Core\App;
 use Core\Database;
-use Core\Response;
 
 $db = App::resolve('Core\Database');
 
-// $currentUser = 2;
-
-// For navbar
 $services = $db->query('SELECT * FROM services')->get();
 
 $service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['id']])->findOrFail();
 
-// authorize($note['user_id'] === $currentUser);
+$prices = $db->query("SELECT name, price, description FROM services WHERE id = :id", ['id' => $_GET['id']])->get();
+
+$currentUser = $_SESSION['user']['id'];
+
+$user = $db->query("SELECT * FROM users WHERE id = :id", ['id' => $currentUser])->findOrFail();
+
+authorize($user['id'] === $currentUser);
 
 view('service.view.php', [
   'heading' => $service['name'],
-  'description' => $service['description'],  //MC
-  'services' => $services
+  'description' => $service['description'],
+  'services' => $services,
+  'prices' => $prices,
+  'user' => $user
 ]);
+

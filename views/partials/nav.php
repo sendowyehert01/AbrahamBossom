@@ -106,9 +106,9 @@
                 <li class="nav-item mx-5">
                     <a class="nav-link <?= $current_page == 'about' ? 'active text-warning' : 'text-white' ?>" aria-current="page" href="/about">ABOUT</a>
                 </li>
-                <li class="nav-item mx-5">
+                <!-- <li class="nav-item mx-5">
                     <a class="nav-link <?= $current_page == 'contact' ? 'active text-warning' : 'text-white' ?>" aria-current="page" href="/contact">CONTACT</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

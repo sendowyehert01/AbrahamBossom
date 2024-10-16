@@ -1,3 +1,12 @@
+<style>
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+</style>
+
 <div class="jumbotron jumbotron-fluid">
     <div class="card banner">
       <img src="style/images/IMG_1402.PNG" alt="payment_method">

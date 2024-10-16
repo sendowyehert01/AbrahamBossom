@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="style/style.css">
 
+    <link rel="stylesheet" href="https://use.typekit.net/your-font-kit-id.css">
+
     <style>
 
     body {

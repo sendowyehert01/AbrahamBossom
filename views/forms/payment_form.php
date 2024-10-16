@@ -4,6 +4,7 @@
         font-size: 32px;
         color: #2f5a37;
         font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .custom-hr {
