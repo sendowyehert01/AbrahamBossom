@@ -3,10 +3,46 @@
 
 <style>
 
+/* .carousel-item {
+  position: relative;
+} */
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 135, 84, 0.5); /* Dark green with 50% opacity */
+  z-index: 1;
+}
+
+.carousel-caption {
+  z-index: 2;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  z-index: 2;
+} 
+
 .carousel-caption p {
   color: white;
-  text-shadow: 5px 2px 1px #1a8754;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 4rem;
 }
+
+/* ________________________________________________ */
+
+.card-title, h1 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card-text {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
 
 
 

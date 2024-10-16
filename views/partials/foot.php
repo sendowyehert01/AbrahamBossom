@@ -9,6 +9,8 @@
    }
 }
 
+
+
 </style>
 
 <footer class="text-center text-lg-start footer p-5" style="background-color: #f9f9f9; padding: 20px; border-top: 1px solid #e6e6e6;">
@@ -20,7 +22,7 @@
                     <img src="style/images/logo_no_bg.png" alt="Abrahams Bosom logo" class="me-3" style="width: 10rem">
                 </div>
                 <div>
-                    <h2 class="m-0 text-center" style="font-family: 'Georgia', serif; color: #2b4620;">ABRAHAMS BOSOM</h4>
+                    <h2 class="m-0 text-center" style="font-family: 'Times New Roman', serif; color: #2b4620;">ABRAHAMS BOSOM</h4>
                     <h4 class="m-0 text-center" style="color: #a05d36; font-family: 'Times New Roman', serif;">Memorial Garden</h6>
                 </div>
             </div>

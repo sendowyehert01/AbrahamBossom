@@ -4,6 +4,7 @@
         font-size: 32px;
         color: #2f5a37;
         font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .custom-hr {
@@ -73,21 +74,25 @@
     <div class="container">
         <h2 class="text-center form-title pt-5">INQUIRE NOW!</h2>
         <hr class="custom-hr">
-        <p class="text-center form-subtitle mb-4 mt-5">Send us a message and we will get back to you as soon as possible.</p>
+        <p class="text-center form-subtitle mb-4 mt-5">Send us a message and we will get back to you as soon as
+            possible.</p>
 
         <form id="inquiryForm" class="needs-validation" novalidate>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter your name" required>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your name"
+                            value="<?= htmlspecialchars($user['first_name'] . ' ' . $user['middle'] . ' ' . $user['last_name']) ?>"
+                            required>
                         <div class="invalid-feedback">Full Name is required</div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                            value="<?= htmlspecialchars($user['email']) ?>" required>
                         <div class="invalid-feedback">Please enter a valid email</div>
                     </div>
                 </div>
@@ -100,8 +105,10 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="mb-3">
-                        <label for="service" class="form-label">Product/Service <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="service" placeholder="Enter product/service" required>
+                        <label for="service" class="form-label">Product/Service <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="service" placeholder="Enter product/service"
+                            required>
                         <div class="invalid-feedback">Product/Service is required</div>
                     </div>
                 </div>
@@ -119,7 +126,8 @@
                         ABRAHAM BOSSOM AGREEMENT <span class="text-danger">(Required)</span><br>
                     </label>
                     <input type="checkbox" class="form-check-input ms-1 me-3" id="agreement" required>
-                    <label>I consent to receive communications by email. I understand and agreed to the privacy policy with regards to my personal information.</label>
+                    <label>I consent to receive communications by email. I understand and agree to the privacy policy
+                        regarding my personal information.</label>
                     <div class="invalid-feedback">You must agree before submitting.</div>
                 </div>
             </div>
@@ -129,12 +137,12 @@
 </div>
 
 <script>
-    (function() {
+    (function () {
         'use strict'
         var forms = document.querySelectorAll('.needs-validation')
         Array.prototype.slice.call(forms)
-            .forEach(function(form) {
-                form.addEventListener('submit', function(event) {
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()

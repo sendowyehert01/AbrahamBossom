@@ -7,6 +7,7 @@
   h3 {
     font-size: 32px;
     color: #2f5a37;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
   }
 
@@ -21,6 +22,7 @@
     font-size: 20px;
     color: #2f5a37;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   .sidebar {
@@ -156,7 +158,7 @@
           <h4>Offline Payment</h4>
           <h2 class="pt-5 text-center">ABMG HEAD OFFICE</h2>
           <p class="ms-3 text-center">You can pay directly in our office address:</p>
-          <li class="ms-5 li text-center">KM 49 Aguinaldo Highway, Silang, Cavite</li>
+          <p class="ms-5 li text-center">KM 49 Aguinaldo Highway, Silang, Cavite</p>
         </div>
       </div>
     </div>
