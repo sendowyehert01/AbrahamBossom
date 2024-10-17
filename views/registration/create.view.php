@@ -22,9 +22,9 @@
                <div class="form-group mt-2 d-flex justify-content-center">
                    <label for="">EMAIL</label>
                </div>
-               <div class="clearfix mt-3">
+               <!-- <div class="clearfix mt-3">
                    <a href="#" class="forgot">Forgot Password?</a>
-               </div>        
+               </div>         -->
                <div class="form-group mt-3 d-flex justify-content-center">
                    <button type="submit" class="btn btn-success btn-block sign-btn">SIGN UP</button>
                </div>

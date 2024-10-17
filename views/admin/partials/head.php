@@ -107,6 +107,11 @@
                             <a href="/admin/customers" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
                                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
                         </li>
+
+                        <li>
+                            <a href="/admin/inquiries" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
+                                <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Inquiries</span> </a>
+                        </li>
                     </ul>
                     <hr>
                     <div class="dropdown pb-4">

@@ -28,6 +28,14 @@ $router->get('/admin/customers/create', 'admin/customers/create.php')->only('adm
 $router->post('/admin/customers/store', 'admin/customers/store.php')->only('admin');
 $router->get('/admin/customers/edit', 'admin/customers/edit.php')->only('admin');
 $router->patch('/admin/customers/update', 'admin/customers/update.php')->only('admin');
+// INQUIRIES ROUTES -------------------------------------------------------------------------
+$router->get('/admin/inquiries', 'admin/inquiries/index.php')->only('admin');
+$router->get('/admin/inquiry', 'admin/inquiries/show.php')->only('admin');
+$router->delete('/admin/inquiry', 'admin/inquiries/destroy.php')->only('admin');
+$router->get('/admin/inquiries/create', 'admin/inquiries/create.php')->only('admin');
+$router->post('/admin/inquiries/store', 'admin/inquiries/store.php')->only('admin');
+$router->get('/admin/inquiries/edit', 'admin/inquiries/edit.php')->only('admin');
+$router->patch('/admin/inquiries/update', 'admin/inquiries/update.php')->only('admin');
 
 $router->get('/services', 'services.php');
 $router->get('/payment', 'payment.php')->only('auth');
@@ -46,5 +54,7 @@ $router->get('/login', 'sessions/create.php');
 $router->post('/sessions', 'sessions/store.php');
 $router->delete('/sessions', 'sessions/destroy.php')->only('auth');
 $router->get('/user-profile', 'sessions/show.php')->only('auth');
+
+$router->post('/inquiries', 'inquiries/store_inquiries.php');
 
 ?>  
