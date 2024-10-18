@@ -140,24 +140,14 @@
                     <thead>
                         <tr>
                             <th scope="col">Service</th>
-                            <th scope="col">Price</th>
                             <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (!empty($prices)) { ?>
-                            <?php foreach ($prices as $price) { ?>
-                                <tr>
-                                    <td><?= $price['name'] ?></td>
-                                    <td>$<?= number_format($price['price'], 2) ?></td>
-                                    <td><?= $price['description'] ?></td>
-                                </tr>
-                            <?php } ?>
-                        <?php } else { ?>
-                            <tr>
-                                <td colspan="3">No services found in this range.</td>
-                            </tr>
-                        <?php } ?>
+                      <tr>
+                        <td><?= $price['name'] ?></td>
+                        <td><?= $price['description'] ?></td>
+                      </tr>
                     </tbody>
                 </table>
             </div>
