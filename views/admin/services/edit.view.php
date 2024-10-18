@@ -16,13 +16,6 @@
         <?php endif; ?>
       </div>
       <div class="col-md-12">
-        <label class="form-label">Price</label>
-        <input type="number" name="price" class="form-control" value="<?= $service['price']?>" required>
-        <?php if (isset($errors['price'])) : ?>
-            <span class="text-danger"><?= $errors['price'] ?></span>
-        <?php endif; ?>
-      </div>
-      <div class="col-md-12">
         <label class="form-label">Description</label>
         <textarea 
                   id="description" 

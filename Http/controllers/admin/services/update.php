@@ -31,10 +31,9 @@ $errors = [];
     ]);
   }
 
-  $db->query('UPDATE services SET name = :name, price = :price, description = :description WHERE id = :id', [
+  $db->query('UPDATE services SET name = :name, description = :description WHERE id = :id', [
       'id' => $_POST['id'],
       'name' => $_POST['name'],
-      'price' => $_POST['price'],
       'description' => $_POST['description'],
     ]);
 

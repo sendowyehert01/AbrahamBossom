@@ -7,9 +7,9 @@
            <form action="/register" method="post" >
                <h2 class="text-center">SIGN UP</h2>   
                   <div class="icons upicon mt-4">
-                    <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-telephone-fill"></i></a>
+                    <!-- <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-telephone-fill"></i></a>
                     <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-instagram"></i></a>
-                    <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-globe"></i></a>
+                    <a type="button" class="phone text-dark fs-5 rounded"><i class="bi bi-globe"></i></a> -->
                   </div>
                 <?php if (isset($errors['email'])) : ?>
                   <div class="text-danger">

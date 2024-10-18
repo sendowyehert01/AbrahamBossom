@@ -19,7 +19,6 @@
         <thead class="text-white" style="background-color: #a5ccba">
           <tr class="text-center">
             <th>Service Name</th>
-            <th>Service Price</th>
             <th>Description</th>
             <th>Actions</th>
           </tr>
@@ -32,7 +31,6 @@
                   <?= htmlspecialchars($service['name']) ?>
                 </a>
               </td>
-              <td class="text-center"><?= $service['price'] ?></td>
               <td><?= $service['description'] ?></td>
               <td class="text-center">
                 <div class="dropdown">

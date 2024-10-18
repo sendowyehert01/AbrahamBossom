@@ -14,10 +14,6 @@ $errors = [];
     $errors['name'] = "A name of no more than 50 characters is required.";
   }
 
-  if (! Validator::string($_POST['price'], 1 , 10)) {
-    $errors['price'] = "A price of no more than 10 characters is required.";
-  }
-
   if (! Validator::string($_POST['description'], 1 , 500)) {
     $errors['description'] = "A description of no more than 50 characters is required.";
   }
@@ -30,7 +26,7 @@ $errors = [];
   }
 
   if (empty($errors)) {
-    $db->query("INSERT INTO services(name, price, description) VALUES(:name, :price, :description)", ['name' => $_POST['name'] , 'price' => $_POST['price'], 'description'=> $_POST['description']]);
+    $db->query("INSERT INTO services(name, description) VALUES(:name, :description)", ['name' => $_POST['name'] , 'description'=> $_POST['description']]);
   }
 
   header('location: /admin/services');
