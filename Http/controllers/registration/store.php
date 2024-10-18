@@ -99,7 +99,7 @@ if ($user) {
       <br>
       <p>Thank you for visiting Abraham's Bosom website. To complete your registration, please enter the 6-digit One Time Pin (OTP): </p>
       <p><strong>" . $_SESSION['pin'] . "</strong></p>
-      <p>This code is valid for only 5 minutes. Pleasr keep your OTP confidential and do not share it to anyone.</p>
+      <p>This code is valid for only 5 minutes. Please keep your OTP confidential and do not share it to anyone.</p>
       <br>
       <p>Thank you</p>
 
