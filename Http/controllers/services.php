@@ -8,6 +8,5 @@ $service = $db->query("SELECT * FROM services WHERE id = :id", ['id' => $_GET['i
 
 view('service.view.php', [
   'heading' => $service['name'],
-  'description' => $service['description'],
-  'service_id' => $service['id'],
+  'service' => $service,
 ]);
