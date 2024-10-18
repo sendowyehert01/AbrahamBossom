@@ -28,7 +28,7 @@ if ($_SESSION === [])
 $otp = (int) $_SESSION['pin'];
 
 // Set timeout duration
-$timeout = 30;
+$timeout = 300;
 
 // Check if the session variable for last activity exists
 if (isset($_SESSION['LAST_ACTIVITY'])) {
