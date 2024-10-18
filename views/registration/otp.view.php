@@ -36,9 +36,9 @@
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="sixth" maxlength="1"> 
                 </div> 
 
-                <div id="timer-container" class="mt-4 d-flex justify-content-center">
+                <div id="timer-container" class="d-flex justify-content-center">
                     <span id="timer-display">05:00</span>
-                    <button id="reset-button" class="btn btn-secondary">Reset</button>
+                    <!-- <button id="reset-button" class="btn btn-secondary">Reset</button> -->
                 </div>
 
               <div class="mt-4 d-flex justify-content-center"> 
