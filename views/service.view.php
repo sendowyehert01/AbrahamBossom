@@ -84,7 +84,7 @@
 
 <div class="row d-flex justify-content-center pb-5" style="background-color: #f9faf0;">
     <div class="top">
-        <p style="font-family: 'Proxima Nova', sans-serif;"><?= $servicep['description'] ?></p>
+        <p style="font-family: 'Proxima Nova', sans-serif;"><?= $service['description'] ?></p>
     </div>
     <div class="image-grid container">
         <img class="first picsoflawn" src="style/images/IMG_1403.PNG" alt="Lawn Lot 1">
