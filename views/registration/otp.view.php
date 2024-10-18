@@ -36,11 +36,11 @@
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="sixth" maxlength="1"> 
                 </div> 
 
-                <div id="timer-container mt-4 d-flex justify-content-center">
+                <div id="timer-container" class="mt-4 d-flex justify-content-center">
                     <span id="timer-display">00:00:00</span>
                     <button id="reset-button">Reset</button>
                 </div>
-                
+
               <div class="mt-4 d-flex justify-content-center"> 
                   <button class="btn btn-success validate"><p>SUBMIT</p></button> 
               </div> 
@@ -52,6 +52,49 @@
 </body>
 
 <script>
+         const timerContainer = document.getElementById('timer-container');
+        const timerDisplay = document.getElementById('timer-display');
+        const resetButton = document.getElementById('reset-button');
+
+        let startTime = 0;
+        let intervalId = null;
+
+        function startTimer(duration) {
+            startTime = Date.now();
+            intervalId = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            const now = Date.now();
+            const elapsedTime = Math.floor((now - startTime) / 1000);
+            const remainingTime = duration - elapsedTime;
+
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = remainingTime % 60;
+            const milliseconds = Math.floor((remainingTime % 1) * 1000);
+
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
+        }
+
+        function stopTimer() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timerDisplay.textContent = '00:00:00';
+            startTime = 0;
+        }
+
+        resetButton.addEventListener('click', resetTimer);
+
+        // Start the timer with 60 seconds duration
+        startTimer(60 * 1000);
+
+
     const inputs = document.querySelectorAll("input"),
       button = document.querySelector("button");
 
@@ -102,49 +145,6 @@
 
     //focus the first input which index is 0 on window load
     window.addEventListener("load", () => inputs[0].focus());
-
-
-        const timerContainer = document.getElementById('timer-container');
-        const timerDisplay = document.getElementById('timer-display');
-        const resetButton = document.getElementById('reset-button');
-
-        let startTime = 0;
-        let intervalId = null;
-
-        function startTimer(duration) {
-            startTime = Date.now();
-            intervalId = setInterval(updateTimer, 1000);
-        }
-
-        function updateTimer() {
-            const now = Date.now();
-            const elapsedTime = Math.floor((now - startTime) / 1000);
-            const remainingTime = duration - elapsedTime;
-
-            const minutes = Math.floor(remainingTime / 60);
-            const seconds = remainingTime % 60;
-            const milliseconds = Math.floor((remainingTime % 1) * 1000);
-
-            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
-        }
-
-        function stopTimer() {
-            if (intervalId) {
-                clearInterval(intervalId);
-                intervalId = null;
-            }
-        }
-
-        function resetTimer() {
-            stopTimer();
-            timerDisplay.textContent = '00:00:00';
-            startTime = 0;
-        }
-
-        resetButton.addEventListener('click', resetTimer);
-
-        // Start the timer with 60 seconds duration
-        startTimer(60 * 1000);
 
   </script>
 
