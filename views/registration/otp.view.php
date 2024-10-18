@@ -37,8 +37,8 @@
                 </div> 
 
                 <div id="timer-container" class="mt-4 d-flex justify-content-center">
-                    <span id="timer-display">00:00:00</span>
-                    <button id="reset-button">Reset</button>
+                    <span id="timer-display">05:00</span>
+                    <button id="reset-button" class="btn btn-secondary">Reset</button>
                 </div>
 
               <div class="mt-4 d-flex justify-content-center"> 
@@ -52,7 +52,7 @@
 </body>
 
 <script>
-         const timerContainer = document.getElementById('timer-container');
+        const timerContainer = document.getElementById('timer-container');
         const timerDisplay = document.getElementById('timer-display');
         const resetButton = document.getElementById('reset-button');
 
@@ -62,18 +62,20 @@
         function startTimer(duration) {
             startTime = Date.now();
             intervalId = setInterval(updateTimer, 1000);
+
+            console.log(intervalId);
         }
 
         function updateTimer() {
             const now = Date.now();
             const elapsedTime = Math.floor((now - startTime) / 1000);
-            const remainingTime = duration - elapsedTime;
+            const remainingTime = 300 - elapsedTime;
 
             const minutes = Math.floor(remainingTime / 60);
             const seconds = remainingTime % 60;
             const milliseconds = Math.floor((remainingTime % 1) * 1000);
 
-            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         }
 
         function stopTimer() {
@@ -93,7 +95,6 @@
 
         // Start the timer with 60 seconds duration
         startTimer(60 * 1000);
-
 
     const inputs = document.querySelectorAll("input"),
       button = document.querySelector("button");
