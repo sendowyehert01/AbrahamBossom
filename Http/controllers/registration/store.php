@@ -93,8 +93,18 @@ if ($user) {
     // $mail->addBCC('bcc@example.com');
 
     $mail->isHTML(true);
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>' . $_SESSION['pin'] . '</b>';
+    $mail->Subject = '[ABMG] One Time Password (OTP)';
+    $mail->Body    = 
+      "<p>Good day,</p>
+      <br>
+      <p>Thank you for visiting Abraham's Bosom website. To complete your registration, please enter the 6-digit One Time Pin (OTP): </p>
+      <p><strong>" . $_SESSION['pin'] . "</strong></p>
+      <p>This code is valid for only 5 minutes. Pleasr keep your OTP confidential and do not share it to anyone.</p>
+      <br>
+      <p>Thank you</p>
+
+      <i>This is an automatic email. Please do not reply to this email.</i>";
+    
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
