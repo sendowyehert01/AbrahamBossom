@@ -108,7 +108,7 @@
 
 
 
-<?php if ($_SESSION['user'] ?? false): ?>
+<?php if (! $_SESSION['user']) : ?>
     <?php require 'forms/services_form.php'; ?>
 <?php endif; ?>
 
