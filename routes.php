@@ -33,7 +33,7 @@ $router->get('/admin/inquiries', 'admin/inquiries/index.php')->only('admin');
 $router->get('/admin/inquiry', 'admin/inquiries/show.php')->only('admin');
 $router->delete('/admin/inquiry', 'admin/inquiries/destroy.php')->only('admin');
 $router->get('/admin/inquiries/create', 'admin/inquiries/create.php')->only('admin');
-$router->post('/admin/inquiries/store', 'admin/inquiries/store.php')->only('admin');
+$router->post('/admin/inquiries/store', 'admin/inquiries/store.php');
 $router->get('/admin/inquiries/edit', 'admin/inquiries/edit.php')->only('admin');
 $router->patch('/admin/inquiries/update', 'admin/inquiries/update.php')->only('admin');
 
@@ -49,12 +49,8 @@ $router->get('/otp', 'registration/otp.php')->only('otp');;
 $router->post('/otp', 'registration/otpstore.php')->only('otp');;
 $router->get('/multiform', 'registration/multiform.php');
 $router->post('/multiform', 'registration/multistore.php');
-
 $router->get('/login', 'sessions/create.php');
 $router->post('/sessions', 'sessions/store.php');
 $router->delete('/sessions', 'sessions/destroy.php')->only('auth');
 $router->get('/user-profile', 'sessions/show.php')->only('auth');
-
-$router->post('/inquiries', 'inquiries/store_inquiries.php');
-
 ?>  

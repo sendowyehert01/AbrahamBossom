@@ -24,6 +24,7 @@
             <th>Product/Services</th>
             <th>Notes</th>
             <th>Agreement</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -33,10 +34,11 @@
               <td class="text-center"><?= htmlspecialchars($inquiry['full_name']) ?></td>
               <td class="text-center"><?= htmlspecialchars($inquiry['email']) ?></td>
               <td class="text-center"><?= htmlspecialchars($inquiry['contact_no']) ?></td>
-              <td class="text-center"><?= htmlspecialchars($inquiry['product_services']) ?></td>
+              <td class="text-center"><?= htmlspecialchars($inquiry['name']) ?></td>
               <td class="text-center"><?= htmlspecialchars($inquiry['notes']) ?></td>
               <td class="text-center"><?= $inquiry['is_agree'] ? 'Yes' : 'No' ?></td>
-              <td class="text-center">
+              <td class="text-center"><span class=<?= $inquiry['status'] === 'Done' ?  "'bg-success p-1 rounded border text-white'" : "'bg-warning p-1 rounded border text-white'" ?>><?= $inquiry['status'] ?></span></td>
+              <td class="text-center"> 
                 <div class="dropdown">
                   <button class="btn btn-sm btn-secondary btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-cogs"></i> Actions
@@ -44,7 +46,7 @@
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                     <li>
                       <a class="dropdown-item" href="/admin/inquiries/edit?id=<?= $inquiry['id'] ?>">
-                        <i class="fas fa-edit"></i> Update
+                        <i class="fas fa-edit"></i> Update Status
                       </a>
                     </li>
                     <li>

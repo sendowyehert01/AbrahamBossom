@@ -96,12 +96,12 @@
             <hr class="custom-hr">
             <p class="text-center form-subtitle mb-4 mt-5">Send us a message and we will get back to you as soon as possible.</p>
 
-            <form id="inquiryForm" class="needs-validation" action="/inquiries" method="POST" novalidate>
+            <form id="inquiryForm" class="needs-validation" action="/admin/inquiries/store" method="POST" novalidate>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your name" required>
+                            <input type="text" class="form-control" id="fullName" name="full_name" placeholder="Enter your name" required>
                             <div class="invalid-feedback">Full Name is required.</div>
                         </div>
                     </div>
@@ -115,22 +115,22 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="mb-3">
                             <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" id="contact" name="contact" placeholder="+639" required>
+                            <input type="tel" class="form-control" id="contact" name="contact_no" placeholder="+639" required>
                             <div class="invalid-feedback">Please enter a valid contact number.</div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="service" class="form-label">Product/Service <span class="text-danger">*</span></label>
-                            <input type="text" value="<?= $service_id ?>" name="service" hidden>
-                            <input type="text" value="<?= $heading ?>" class="form-control" id="service"  placeholder="Enter product/service" required>
+                            <input type="text" value="<?= $service_id ?>" name="product_services" hidden>
+                            <input type="text" value="<?= $service_name ?>" class="form-control" id="service"  placeholder="Enter product/service" readonly>
                             <div class="invalid-feedback">Product/Service is required.</div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="mb-3">
                             <label for="note" class="form-label">Note</label>
-                            <textarea class="form-control" id="note" name="note" rows="4" placeholder="Leave a message..."></textarea>
+                            <textarea class="form-control" id="note" name="notes" rows="4" placeholder="Leave a message..."></textarea>
                         </div>
                     </div>
                     <p class="small">Note: For billing inquiries, please indicate your CONTRACT number in your message.</p>
@@ -139,7 +139,7 @@
                     <label>
                         ABRAHAM BOSSOM AGREEMENT <span class="text-danger">(Required)</span><br>
                     </label>
-                    <input type="checkbox" class="form-check-input ms-1 me-3" id="agreement" name="agreement" required>
+                    <input type="checkbox" class="form-check-input ms-1 me-3" id="agreement" name="is_agree" required>
                     <label>I consent to receive communications by email. I understand and agree to the privacy policy regarding my personal information.</label>
                     <div class="invalid-feedback">You must agree before submitting.</div>
                 </div>
