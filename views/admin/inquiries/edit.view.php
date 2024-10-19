@@ -32,7 +32,8 @@
           <div class="col-md-6">
             <div class="col-md-12">
               <label class="form-label formlabel">Notes</label>
-              <textarea name="notes" class="form-control inputcontrol" readonly><?= $inquiry['notes'] ?></textarea>
+              <input type="hidden" name="notes" value="<?= $inquiry['reply_id']?>">
+              <textarea class="form-control inputcontrol" readonly><?= $inquiry['reply'] ?></textarea>
             </div>
             <div class="col-md-12 mt-2">
               <label class="form-label formlabel">Agreement</label>

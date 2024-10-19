@@ -129,8 +129,13 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="mb-3">
-                            <label for="note" class="form-label">Note</label>
-                            <textarea class="form-control" id="note" name="notes" rows="4" placeholder="Leave a message..."></textarea>
+                        <label for="validationCustom04" class="form-label">Note</label>
+                        <select name="notes" class="form-select" id="validationCustom04" required>
+                          <option value="">Select option</option>
+                          <?php foreach ($replies as $reply) { ?>
+                            <option value=<?= $reply['id'] ?>><?= $reply['reply'] ?></option>
+                          <?php } ?>
+                        </select>
                         </div>
                     </div>
                     <p class="small">Note: For billing inquiries, please indicate your CONTRACT number in your message.</p>

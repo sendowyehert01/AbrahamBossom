@@ -35,7 +35,7 @@
               <td class="text-center"><?= htmlspecialchars($inquiry['email']) ?></td>
               <td class="text-center"><?= htmlspecialchars($inquiry['contact_no']) ?></td>
               <td class="text-center"><?= htmlspecialchars($inquiry['name']) ?></td>
-              <td class="text-center"><?= htmlspecialchars($inquiry['notes']) ?></td>
+              <td class="text-center"><?= htmlspecialchars($inquiry['reply']) ?></td>
               <td class="text-center"><?= $inquiry['is_agree'] ? 'Yes' : 'No' ?></td>
               <td class="text-center"><span class=<?= $inquiry['status'] === 'Done' ?  "'bg-success p-1 rounded border text-white'" : "'bg-warning p-1 rounded border text-white'" ?>><?= $inquiry['status'] ?></span></td>
               <td class="text-center"> 
