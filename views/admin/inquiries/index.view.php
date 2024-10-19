@@ -53,7 +53,7 @@
                       <form method="POST" action="/admin/inquiry?id=<?= $inquiry['id'] ?>" onsubmit="return confirm('Are you sure you want to delete this inquiry?');">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="dropdown-item text-danger">
-                          <i class="fas fa-trash-alt"></i> Delete
+                          <i class="fas fa-trash-alt"></i> Archieve
                         </button>
                       </form>
                     </li>
