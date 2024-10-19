@@ -5,7 +5,8 @@
   }
 </style>
 
-<header class="p-3 my-0 header">
+<div class="sticky-top bg-white p-0 m-0">
+<header class="p-3 my-0 sticky-top header">
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="d-flex gap-3">
             <!-- Icons removed here -->
@@ -113,3 +114,4 @@
         </div>
     </div>
 </nav>
+</div>
