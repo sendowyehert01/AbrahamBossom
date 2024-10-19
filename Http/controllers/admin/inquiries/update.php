@@ -88,7 +88,7 @@ if ($_POST['email'] && $_POST['status'] !== 'Pending')
     $mail->addReplyTo($gmailUser, 'Abraham Bossom');
 
     $mail->isHTML(true);
-    $mail->Subject = '[ABMG] One Time Password (OTP)';
+    $mail->Subject = "[ABMG] Inquiry";
     $mail->Body    = 
       "<p>Good day,</p>
       <br>
