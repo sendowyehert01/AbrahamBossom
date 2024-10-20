@@ -117,7 +117,7 @@
             <img src="style/images/IMG_1402.PNG" class="card-img" alt="..." style="height:100%;">
             <div class="card-img-overlay" style="padding:20px;">
               <h5 class="card-title"><?= $service['name'] ?></h5>
-              <p class="card-text py-3"><?= $service['description'] ?></p>
+              <p class="card-text py-3"><?= substr($service['description'], 0, 200) . (strlen($service['description']) > 100 ? '...' : '') ?></p>
               <a href="/services?id=<?= $service['id'] ?>" class="btn btn-success slider-button">
                 READ MORE <i class="bi bi-arrow-right"></i>
               </a>

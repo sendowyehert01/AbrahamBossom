@@ -30,7 +30,7 @@
                 </div>
             <?php endif; ?>
             <div class="clearfix mt-3">
-                <a href="/registration/forgot" class="forgot">Forgot Password?</a>
+                <a href="/forgot" class="forgot">Forgot Password?</a>
             </div>
             <div class="form-group mt-3 d-flex justify-content-center">
                 <button type="submit" class="btn btn-success btn-block sign-btn">SIGN IN</button>
