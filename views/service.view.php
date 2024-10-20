@@ -2,80 +2,59 @@
 <?php require 'partials/nav.php'; ?>
 <?php require 'partials/banner.php'; ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 <style>
-    /* The Modal (background) */
-    .modal-head {
-        display: none;
-        position: fixed;
-        /* z-index: 1; */
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
+    /* _______________________________________________ */
+
+    #main-slider {
+        width: 80%;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    #main-slider .splide__track,
+    #main-slider .splide__list {
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
     }
 
-    /* Modal Content (image) */
-    .modal-image {
-        margin: auto;
-        display: block;
-        width: 40%;
-        max-width: 700px;
-        animation: zoom 0.6s;
+    #main-slider .splide__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
 
-    /* Zoom Animation */
-    @keyframes zoom {
-        from {
-            transform: scale(0);
-        }
-
-        to {
-            transform: scale(1);
-        }
+    #main-slider .splide__slide img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
     }
 
-    /* Close Button */
-    .close-image {
-        position: absolute;
-        top: 15px;
-        right: 35px;
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
+    #thumbnail-slider {
+        width: 60%;
+        margin: 10px auto;
     }
 
-    /* Navigation buttons */
-    .prev,
-    .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 30px;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
+    #thumbnail-slider .splide__track {
+        padding: 10px 0;
     }
 
-    .prev {
-        left: 0;
+    #thumbnail-slider .splide__slide {
+        opacity: 0.6;
+        transition: opacity 0.3s;
     }
 
-    .next {
-        right: 0;
+    #thumbnail-slider .splide__slide.is-active {
+        opacity: 1;
+        border: 2px solid #000;
     }
 
-    /* Caption text */
-    #caption {
-        margin: auto;
-        text-align: center;
-        color: white;
-        padding: 10px 20px;
+    #thumbnail-slider .splide__slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 </style>
 
@@ -86,45 +65,72 @@
     <div class="top">
         <p style="font-family: 'Proxima Nova', sans-serif;"><?= $service['description'] ?></p>
     </div>
-    <div class="image-grid container">
-        <img class="first picsoflawn" src="style/images/IMG_1403.PNG" alt="Lawn Lot 1">
-        <img class="second lawnpic picsoflawn" src="style/images/lawn1.png" alt="Lawn Lot 2">
-        <img class="last lawnpic picsoflawn" src="style/images/lawn2.png" alt="Lawn Lot 3">
+
+    <!-- __________________________________________________________________________________________________ -->
+
+    <div id="main-slider" class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <?php
+                $images = [
+                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
+                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
+                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
+                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
+                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
+                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
+                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
+                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
+                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
+                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
+                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
+                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
+
+                ];
+
+                foreach ($images as $image) {
+                    echo "<li class='splide__slide'>";
+                    echo "<img src='{$image['src']}' alt='{$image['alt']}'>";
+                    echo "</li>";
+                }
+                ?>
+            </ul>
+        </div>
     </div>
 
+    <div id="thumbnail-slider" class="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <?php
+                foreach ($images as $image) {
+                    echo "<li class='splide__slide'>";
+                    echo "<img src='{$image['src']}' alt='Thumbnail for {$image['alt']}'>";
+                    echo "</li>";
+                }
+                ?>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ______________________________________________________________________________________________________ -->
+
     <!-- Rates Button -->
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-5">
         <button class="btn btn-success fw-bold" style="width: 10rem" data-bs-toggle="modal"
             data-bs-target="#ratesModal">
             RATES
         </button>
     </div>
 
-   
-
-
 </div>
 
-
-
-
-<?php if (! $_SESSION) : ?>
+<?php if (!$_SESSION): ?>
     <?php require 'forms/services_form.php'; ?>
 <?php endif; ?>
 
 
 </div>
 
-
-
-<!-- Modal Images -->
-<div id="imageModal" class="modal modal-head">
-    <span class="close close-image">&times;</span>
-    <img class="modal-content modal-image" id="zoomedImage">
-    <div id="caption">Lawn Lots</div>
-    <button class="btn btn-success prev" onclick="changeImage(-1)">&#10094;</button>
-    <button class="btn btn-success next" onclick="changeImage(1)">&#10095;</button>
-</div>
 
 <!-- Modal for displaying filtered services -->
 <div class="modal fade" id="ratesModal" tabindex="-1" aria-labelledby="ratesModalLabel" aria-hidden="true">
@@ -138,61 +144,69 @@
                 <!-- Table for Rates -->
                 <table class="table table-striped">
                     <thead>
-                        <tr>
+
+                        <tr style="background-color: green;">
                             <th scope="col">Service</th>
                             <th scope="col">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><?= $service['name'] ?></td>
-                        <td><?= $service['description'] ?></td>
-                      </tr>
+                        <tr>
+                            <td><?= $service['name'] ?></td>
+                            <td><?= $service['description'] ?></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-                <a href="/payment" class="btn btn-success">Pay Now</a>
+                <?php if (!$_SESSION): ?>
+                    <a href="/payment" class="btn btn-success">Pay Now</a>
+                <?php else: ?>
+                    <a href="/register" class="btn btn-success">Pay Now</a>
+                <?php endif; ?>
             </div>
+
         </div>
     </div>
 </div>
 
 <?php require 'partials/foot.php'; ?>
 
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var main = new Splide('#main-slider', {
+            type: 'fade',
+            pagination: false,
+            arrows: true,
+            cover: false,
+            heightRatio: 0.6000, // This sets a 16:9 aspect ratio. Adjust as needed.
+        });
 
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("zoomedImage");
-    // var captionText = document.getElementById("caption");
-    var images = document.querySelectorAll(".picsoflawn");
-    var currentImageIndex = 0;
+        var thumbnails = new Splide('#thumbnail-slider', {
+            rewind: true,
+            arrows: false,
+            fixedWidth: 104,
+            fixedHeight: 58,
+            isNavigation: true,
+            gap: 10,
+            focus: 'center',
+            pagination: false,
+            cover: true,
+            dragMinThreshold: {
+                mouse: 4,
+                touch: 10,
+            },
+            breakpoints: {
+                640: {
+                    fixedWidth: 66,
+                    fixedHeight: 38,
+                },
+            },
+        });
 
-    images.forEach((img, index) => {
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            // captionText.innerHTML = this.alt;
-            currentImageIndex = index;
-        }
+        main.sync(thumbnails);
+        main.mount();
+        thumbnails.mount();
     });
-
-    var span = document.getElementsByClassName("close")[0];
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    function changeImage(direction) {
-        currentImageIndex += direction;
-        if (currentImageIndex >= images.length) {
-            currentImageIndex = 0;
-        }
-        if (currentImageIndex < 0) {
-            currentImageIndex = images.length - 1;
-        }
-        modalImg.src = images[currentImageIndex].src;
-        //   captionText.innerHTML = images[currentImageIndex].alt;
-    }
-
-
 </script>

@@ -53,4 +53,12 @@ $router->get('/login', 'sessions/create.php');
 $router->post('/sessions', 'sessions/store.php');
 $router->delete('/sessions', 'sessions/destroy.php')->only('auth');
 $router->get('/user-profile', 'sessions/show.php')->only('auth');
+
+
+$router->get('/forgot', 'forgot/create.php');
+$router->post('/forgot', 'forgot/store.php');
+$router->get('/forgot_otp', 'forgot/otp.php')->only('otp');
+$router->post('/forgot_otp', 'forgot/otpstore.php')->only('otp');
+$router->get('/forgot_multiform', 'forgot/multiform.php');
+$router->post('/forgot_multiform', 'forgot/multistore.php');
 ?>  

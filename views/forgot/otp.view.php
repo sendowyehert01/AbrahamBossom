@@ -19,7 +19,7 @@
                     <h1>OTP VERIFICATION CODE</h1>
                 </div>
             </div>
-            <form action="/otp" method="POST">
+            <form action="/forgot_otp" method="POST">
               <h6 >Enter the OTP sent to your email address</h6> 
                 <!-- <div> <span>A code has been sent to</span> <small>*******9897</small> </div>  -->
                 <?php if (isset($errors['pin'])) : ?>
@@ -28,6 +28,7 @@
                   </div>
                 <?php endif; ?>
                 <div id="otp" class="input-field inputs d-flex flex-row justify-content-center mt-2"> 
+                    <input name="email" value="<?= $_SESSION['email'] ?>" hidden>
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" id="first" maxlength="1"> 
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="second" maxlength="1"> 
                     <input name="pin[]" class="m-2 text-center form-control rounded" required type="number" disabled id="third" maxlength="1"> 
@@ -38,6 +39,7 @@
 
                 <div id="timer-container" class="d-flex justify-content-center">
                     <span id="timer-display">05:00</span>
+                    
                 </div>
 
               <div class="mt-4 d-flex justify-content-center"> 
