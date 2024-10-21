@@ -50,17 +50,19 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($image["size"] > 500000) {
-  $errors['images'] = "Sorry, your file is too large.";
+if ($image["size"] > 1000000000) {  // 1GB = 1,000,000,000 bytes
+  $errors['images'] = "Sorry, your file is too large. Maximum size allowed is 1GB.";
   $uploadOk = 0;
 }
 
-// Allow certain file formats
+
+// Check if the image format is valid (including HEIC format)
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  $errors['images'] = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-  $uploadOk = 0;
+&& $imageFileType != "gif" && $imageFileType != "heic") {
+    $errors['images'] = "Sorry, only JPG, JPEG, PNG, GIF, and HEIC files are allowed.";
+    $uploadOk = 0;
 }
+
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0 || count($errors) > 0) {
