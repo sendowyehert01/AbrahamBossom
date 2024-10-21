@@ -3,91 +3,205 @@
 
 <style>
   /* Style the form */
-#regForm {
-  background-color: #ffffff;
-  margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
-}
+  #regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
 
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
+  /* Mark input boxes that get an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
 
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: hidden;
-  opacity: 0.5;
-}
+  /* Style for the step indicators (circles): */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
 
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
 
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04AA6D;
-}
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+
+  /* Style for Beneficiary table */
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    /* background-color: #1a8754; */
+  }
 </style>
 
 <div class="container w-100 mx-auto">
   <form id="regForm" action="" class="row g-3 needs-validation" novalidate>
-    <!-- One "tab" for each step in the form: -->
+    <!-- First Tab: Payment Details -->
     <div class="tab col-12">
-      
-      <div class="form-check mb-3">
-        <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
-        <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
-        <div class="invalid-feedback">Example invalid feedback text</div>
+      <div class="d-flex">
+        <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
+        <h3 class="pt-4 fw-bold">PAYMENT DETAILS</h3>
+      </div>
+      <div class="row mt-4">
+        <div class="col-6">
+          <input type="checkbox" class="me-3" name="atNeed" id="atNeed"><label class="me-5" for="atNeed">At - Need</label>
+        </div>
+        <div class="col-6">
+          <input type="checkbox" class="me-3" name="cashPayment" id="cashPayment"><label for="cashPayment">Cash (Full Payment upon Purchase)</label>
+        </div>
+        <div class="col-6">
+          <input type="checkbox" class="me-3" name="noDownPayment" id="noDownPayment"><label class="me-5" for="noDownPayment">No Down Payment</label>
+        </div>
+        <div class="col-6">
+          <input type="checkbox" class="me-3" name="withDownPayment" id="withDownPayment"><label for="withDownPayment">With Down Payment</label>
+        </div>
       </div>
 
-      <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" required>
-      <div class="valid-feedback">
-        Looks good!
+      <div class="row mt-3">
+        <div class="col-6">
+          <label class="form-label" for="totalSellingPrice">Total Selling Price</label>
+          <input type="text" class="form-control" id="totalSellingPrice" required>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="monthlyAmorization">Monthly Amortization</label>
+          <input type="text" class="form-control" id="monthlyAmorization" required>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="downPayment">Down Payment</label>
+          <input type="text" class="form-control" id="downPayment" required>
+        </div>
+        <div class="col-6">
+          <label class="form-label" for="termsOfPayment">Terms of Payment</label>
+          <input type="text" class="form-control" id="termsOfPayment" required>
+        </div>
       </div>
     </div>
 
-    <div class="tab">
-      <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-      <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+    <!-- Second Tab: Lot Owner's Information -->
+    <div class="tab col-12">
+      <div class="d-flex">
+        <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
+        <h3 class="pt-4 fw-bold">LOT OWNER'S INFORMATION</h3>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" required>
+        </div>
+        <div class="col-md-4">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" required>
+        </div>
+        <div class="col-md-2">
+          <label for="middleInitial" class="form-label">Middle Initial</label>
+          <input type="text" class="form-control" id="middleInitial" required>
+        </div>
+        <div class="col-md-2">
+          <label for="suffix" class="form-label">Suffix</label>
+          <input type="text" class="form-control" id="suffix" required>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" required>
+        </div>
+        <div class="col-md-3">
+          <label for="dob" class="form-label">Date of Birth</label>
+          <input type="text" class="form-control" id="dob" required>
+        </div>
+        <div class="col-md-3">
+          <label for="gender" class="form-label">Gender</label>
+          <select class="form-select" id="gender" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <label for="contactNumber" class="form-label">Contact Number</label>
+          <input type="text" class="form-control" id="contactNumber" required>
+        </div>
+        <div class="col-md-3">
+          <label for="email" class="form-label">E-mail Address</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+      </div>
     </div>
 
-    <div class="tab">
-      <p><input placeholder="dd" oninput="this.className = ''"></p>
-      <p><input placeholder="mm" oninput="this.className = ''"></p>
-      <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+    <!-- Third Tab: Beneficiary Information -->
+    <div class="tab col-12">
+      <div class="d-flex">
+        <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
+        <h3 class="pt-4 fw-bold">BENEFICIARY INFORMATION</h3>
+      </div>
+
+      <table>
+        <thead class="bg-success">
+          <tr class="text-white">
+            <th>No.</th>
+            <th>Full Name</th>
+            <th>Relationship to Lot Owner</th>
+          </tr>
+        </thead>
+        <tbody id="beneficiaryTableBody">
+          <tr>
+            <td><input type="text" class="form-control" name="beneficiaryNo[]" required></td>
+            <td><input type="text" class="form-control" name="beneficiaryFullName[]" required></td>
+            <td><input type="text" class="form-control" name="beneficiaryRelationship[]" required></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mt-3">
+        <button type="button" class="btn btn-primary" onclick="addBeneficiaryRow()">Add Beneficiary</button>
+      </div>
     </div>
 
-    <div class="tab">
-      <p><input placeholder="Username..." oninput="this.className = ''"></p>
-      <p><input placeholder="Password..." oninput="this.className = ''"></p>
-    </div>
-
+    <!-- Navigation Buttons -->
     <div style="overflow:auto;">
       <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <button type="button" class="btn btn-success" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" class="btn btn-success" id="nextBtn" onclick="nextPrev(1)">Next</button>
       </div>
     </div>
 
-    <!-- Circles which indicates the steps of the form: -->
-    <div>
-      <span class="step"></span>
+    <!-- Step Indicators -->
+    <div style="text-align:center;margin-top:40px;">
       <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>
@@ -96,78 +210,73 @@ input.invalid {
 </div>
 
 <script>
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
 
-function showTab(n) {
-  // This function will display the specified tab of the form ...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
-  // ... and run a function that displays the correct step indicator:
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
-    //...the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
+  function showTab(n) {
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
     }
+    if (n == (x.length - 1)) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    fixStepIndicator(n);
   }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
-}
 
-function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+  function nextPrev(n) {
+    var x = document.getElementsByClassName("tab");
+    if (n == 1 && !validateForm()) return false;
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    if (currentTab >= x.length) {
+      document.getElementById("regForm").submit();
+      return false;
+    }
+    showTab(currentTab);
   }
-  //... and adds the "active" class to the current step:
-  x[n].className += " active";
-}
+
+  function validateForm() {
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    for (i = 0; i < y.length; i++) {
+      if (y[i].value == "") {
+        y[i].className += " invalid";
+        valid = false;
+      }
+    }
+    if (valid) {
+      document.getElementsByClassName("step")[currentTab].className += " finish";
+    }
+    return valid;
+  }
+
+  function fixStepIndicator(n) {
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    x[n].className += " active";
+  }
+
+  function addBeneficiaryRow() {
+    var table = document.getElementById('beneficiaryTableBody');
+    var row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td><input type="text" class="form-control" name="beneficiaryNo[]" required></td>
+      <td><input type="text" class="form-control" name="beneficiaryFullName[]" required></td>
+      <td><input type="text" class="form-control" name="beneficiaryRelationship[]" required></td>
+    `;
+
+    table.appendChild(row);
+  }
 </script>
 
 <?php require 'partials/foot.php'; ?>
