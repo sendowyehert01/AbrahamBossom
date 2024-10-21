@@ -63,7 +63,7 @@
 
 <div class="row d-flex justify-content-center pb-5" style="background-color: #f9faf0;">
     <div class="top">
-        <p style="font-family: 'Proxima Nova', sans-serif;"><?= $service['description'] ?></p>
+        <p style="font-family: 'Proxima Nova', sans-serif;"><?= $service_description ?></p>
     </div>
 
     <!-- __________________________________________________________________________________________________ -->
@@ -85,7 +85,6 @@
                     ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
                     ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
                     ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
-
                 ];
 
                 foreach ($images as $image) {

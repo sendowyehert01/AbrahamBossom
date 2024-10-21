@@ -39,6 +39,11 @@
                   </button>
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                     <li>
+                      <a class="dropdown-item" href="/admin/services/upload?id=<?= $service['id'] ?>">
+                        <i class="fas fa-edit"></i> Upload
+                      </a>
+                    </li>
+                    <li>
                       <a class="dropdown-item" href="/admin/services/edit?id=<?= $service['id'] ?>">
                         <i class="fas fa-edit"></i> Update
                       </a>
@@ -47,7 +52,7 @@
                       <form method="POST" action="/admin/service?id=<?= $service['id'] ?>" onsubmit="return confirm('Are you sure you want to delete this service?');">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="dropdown-item text-danger">
-                          <i class="fas fa-trash-alt"></i> Delete
+                          <i class="fas fa-trash-alt"></i> Archieve
                         </button>
                       </form>
                     </li>
@@ -60,7 +65,7 @@
       </table>
     </div>
   </div>
-</div>
+</div>    
 
 <script>
 $(document).ready(function(){

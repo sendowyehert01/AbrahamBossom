@@ -15,5 +15,6 @@ view('service.view.php', [
   'services' => $services,
   'service_id' => $service['id'],
   'service_name' => $service['name'],
+  'service_description' => $service['description'],
   'replies' => $replies
 ]);

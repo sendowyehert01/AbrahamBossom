@@ -10,8 +10,10 @@ $router->get('/admin/service', 'admin/services/show.php')->only('admin');
 $router->delete('/admin/service', 'admin/services/destroy.php')->only('admin');
 $router->get('/admin/services/create', 'admin/services/create.php')->only('admin');
 $router->post('/admin/services/store', 'admin/services/store.php')->only('admin');
+$router->get('/admin/services/upload', 'admin/services/uploadpage.php')->only('admin');
 $router->get('/admin/services/edit', 'admin/services/edit.php')->only('admin');
 $router->patch('/admin/services/update', 'admin/services/update.php')->only('admin');
+$router->post('/admin/services/upload', 'admin/services/upload.php')->only('admin');
 // STAFFS ROUTES -------------------------------------------------------------------------
 $router->get('/admin/staffs', 'admin/staffs/index.php')->only('admin');
 $router->get('/admin/staff', 'admin/staffs/show.php')->only('admin');

@@ -109,7 +109,7 @@
                         </li>
 
                         <li>
-                            <a href="/admin/inquiries" class="nav-link px-0 align-middle <?= strpos($current_page, 'customers') !== false ? 'active active-link' : 'text-white' ?>">
+                            <a href="/admin/inquiries" class="nav-link px-0 align-middle <?= strpos($current_page, 'inquiries') !== false ? 'active active-link' : 'text-white' ?>">
                                 <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Inquiries</span> </a>
                         </li>
                     </ul>
@@ -120,7 +120,6 @@
                             <span class="d-none d-sm-inline mx-1"><?= $_SESSION['user']['email'] ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a class="dropdown-item text-dark" href="#">New project...</a></li>
                             <li><a class="dropdown-item text-dark" href="#">Settings</a></li>
                             <li><a class="dropdown-item text-dark" href="#">Profile</a></li>
                             <li>
