@@ -2,6 +2,27 @@
 
 <link rel="stylesheet" href="style/multi-step-form.css">
 
+
+<!-- Consent Modal -->
+<div class="modal fade" id="consentModal" tabindex="-1" aria-labelledby="consentModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-3" id="consentModalLabel">USER SIGN UP DATA CONSENT</h5>
+      </div>
+      <div class="modal-body">
+        <p>
+          I hereby authorize Abraham's Bosom Memorial Garden to collect and process the personal information indicated in this form for the purpose of registration. All data collected and recorded will only be accessed by ABMG Admin Office and shared with ABMG Secretary. I understand that the personal information collected and processed is confidential and protected by RA 10173 or Data Privacy Act of 2012. All information will only be kept in Abraham's Bosom Memorial Garden.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="disagreeBtn">Disagree</button>
+        <button type="button" class="btn btn-success" id="agreeBtn">Agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center ">
   <form class="row g-3 needs-validation d-flex justify-content-center align-items-center rounded border shadow mb-5 bg-white rounded" id="regForm" action="/multiform" method="POST">
     <div class="tab row p-0">
@@ -151,6 +172,25 @@
 </div>
 
 <script src="js/script.js"></script>
+
+<!-- Bootstrap 5 JS and Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script>
+  // Show modal when the page loads
+  var consentModal = new bootstrap.Modal(document.getElementById('consentModal'));
+  consentModal.show();
+
+  // If "Agree" is clicked, close the modal
+  document.getElementById('agreeBtn').addEventListener('click', function () {
+    consentModal.hide();
+  });
+
+  // If "Disagree" is clicked, redirect to the homepage
+  document.getElementById('disagreeBtn').addEventListener('click', function () {
+    window.location.href = '/';
+  });
+</script>
 
 </body>
 </html>
