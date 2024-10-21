@@ -7,30 +7,31 @@
     /* _______________________________________________ */
 
     #main-slider {
-        width: 80%;
-        height: 400px;
+        width: 50%;
+        height: auto;
         margin: 0 auto;
     }
 
     #main-slider .splide__track,
     #main-slider .splide__list {
-        height: 100%;
+        height: auto;
     }
 
     #main-slider .splide__slide {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: auto;
     }
 
     #main-slider .splide__slide img {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
+        width: 100%;
         height: auto;
         object-fit: contain;
     }
+
+
+
 
     #thumbnail-slider {
         width: 60%;
@@ -71,28 +72,11 @@
     <div id="main-slider" class="splide">
         <div class="splide__track">
             <ul class="splide__list">
-                <?php
-                $images = [
-                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
-                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
-                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
-                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
-                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
-                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
-                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
-                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
-                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
-                    ['src' => 'style/images/IMG_1403.PNG', 'alt' => 'Coffee with latte art'],
-                    ['src' => 'style/images/lawn1.png', 'alt' => 'Muffins with chocolate chips'],
-                    ['src' => 'style/images/lawn2.png', 'alt' => 'Tiramisu dessert'],
-                ];
-
-                foreach ($images as $image) {
-                    echo "<li class='splide__slide'>";
-                    echo "<img src='{$image['src']}' alt='{$image['alt']}'>";
-                    echo "</li>";
-                }
-                ?>
+                <?php foreach ($service_images as $image): ?>
+                    <li class="splide__slide">
+                        <img src="uploads/<?= $image['image_src'] ?>" alt="<?= $image['image_name'] ?>">
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -100,13 +84,11 @@
     <div id="thumbnail-slider" class="splide">
         <div class="splide__track">
             <ul class="splide__list">
-                <?php
-                foreach ($images as $image) {
-                    echo "<li class='splide__slide'>";
-                    echo "<img src='{$image['src']}' alt='Thumbnail for {$image['alt']}'>";
-                    echo "</li>";
-                }
-                ?>
+                <?php foreach ($service_images as $image): ?>
+                    <li class="splide__slide">
+                        <img src="uploads/<?= $image['image_src'] ?>" alt="<?= $image['image_name'] ?>">
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -173,7 +155,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         var main = new Splide('#main-slider', {
             type: 'fade',
             pagination: false,
