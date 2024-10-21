@@ -39,7 +39,9 @@ $router->post('/admin/inquiries/store', 'admin/inquiries/store.php');
 $router->get('/admin/inquiries/edit', 'admin/inquiries/edit.php')->only('admin');
 $router->patch('/admin/inquiries/update', 'admin/inquiries/update.php')->only('admin');
 
+// PAYMENT FORM for SERVICES ------------------------------------------------------------
 $router->get('/services', 'services.php');
+$router->get('/buyer', 'buyer.php')->only('auth');
 $router->get('/payment', 'payment.php')->only('auth');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');

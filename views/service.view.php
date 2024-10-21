@@ -158,8 +158,8 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <?php if (!$_SESSION): ?>
-                    <a href="/payment" class="btn btn-success">Pay Now</a>
+                <?php if ($_SESSION): ?>
+                    <a href="/buyer" class="btn btn-success">Pay Now</a>
                 <?php else: ?>
                     <a href="/register" class="btn btn-success">Pay Now</a>
                 <?php endif; ?>
