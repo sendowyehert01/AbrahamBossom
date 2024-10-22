@@ -12,8 +12,13 @@
   }
 
   /* Mark input boxes that get an error on validation: */
-  input.invalid {
+  /* input.invalid {
     background-color: #ffdddd;
+  } */
+
+  /* Mark labels that get an error on validation: */
+  label.invalid {
+    color: red;
   }
 
   /* Hide all steps by default: */
@@ -153,12 +158,7 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
-
-
 
     <div class="tab col-12">
       <div class="d-flex">
@@ -233,7 +233,7 @@
         </div>
         <div class="col-md-3">
           <label for="dob" class="form-label">Date of Birth</label>
-          <input type="text" class="form-control" id="dob" required>
+          <input type="date" class="form-control" id="dob" required>
         </div>
         <div class="col-md-3">
           <label for="gender" class="form-label">Gender</label>
@@ -282,7 +282,7 @@
       </table>
 
       <div class="mt-3">
-        <button type="button" class="btn btn-primary" onclick="addBeneficiaryRow()">Add Beneficiary</button>
+        <button type="button" class="btn btn-success" onclick="addBeneficiaryRow()">Add Beneficiary</button>
       </div>
     </div>
 
@@ -330,43 +330,52 @@
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
       // Instead of submitting the form, perform the redirection
-      window.location.href = "/payment"; 
+      window.location.href = "/payment";
       return false;
     }
     showTab(currentTab);
   }
 
   function validateForm() {
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  
-  for (i = 0; i < y.length; i++) {
-    if (y[i].value == "") {
-      y[i].className += " invalid";
-      valid = false;
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+
+    for (i = 0; i < y.length; i++) {
+      if (y[i].value == "") {
+        y[i].className += " invalid";
+        var label = document.querySelector(`label[for="${y[i].id}"]`);
+        if (label) {
+          label.className += " invalid";
+        }
+        valid = false;
+      } else {
+        y[i].className = y[i].className.replace(" invalid", "");
+        var label = document.querySelector(`label[for="${y[i].id}"]`);
+        if (label) {
+          label.className = label.className.replace(" invalid", "");
+        }
+      }
+    }
+
+    // Check if currentTab is within bounds
+    if (valid && currentTab < document.getElementsByClassName("step").length) {
+      document.getElementsByClassName("step")[currentTab].className += " finish";
+    }
+    return valid;
+  }
+
+  function fixStepIndicator(n) {
+    var i, x = document.getElementsByClassName("step");
+
+    // Only proceed if n is in bounds
+    if (n < x.length) {
+      for (i = 0; i < x.length; i++) {
+        x[i].className = x[i].className.replace(" active", "");
+      }
+      x[n].className += " active";
     }
   }
-
-  // Check if currentTab is within bounds
-  if (valid && currentTab < document.getElementsByClassName("step").length) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid;
-}
-
-function fixStepIndicator(n) {
-  var i, x = document.getElementsByClassName("step");
-  
-  // Only proceed if n is in bounds
-  if (n < x.length) {
-    for (i = 0; i < x.length; i++) {
-      x[i].className = x[i].className.replace(" active", "");
-    }
-    x[n].className += " active";
-  }
-}
-
 
   function addBeneficiaryRow() {
     var table = document.getElementById('beneficiaryTableBody');
@@ -381,10 +390,7 @@ function fixStepIndicator(n) {
     table.appendChild(row);
   }
 
-</script>
-
-<script>
-   function showServiceDetails() {
+  function showServiceDetails() {
     // Get the selected service
     const selectedService = document.getElementById("serviceSelect").value;
 
@@ -407,6 +413,5 @@ function fixStepIndicator(n) {
     }
   }
 </script>
-
 
 <?php require 'partials/foot.php'; ?>

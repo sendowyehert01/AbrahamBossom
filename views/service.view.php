@@ -57,6 +57,41 @@
         height: auto;
         object-fit: cover;
     }
+    /* ____________________________________________________________________________________________________ */
+
+    .card-footer {    
+            padding: 10px;
+            text-align: center;
+        }
+        .card img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .btn-custom-green {
+            background-color: #1B5E20;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom-green:hover {
+            background-color: #2E7D32;
+            color: white;
+        }
+        .card-body {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .custom-a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .card {
+            background-color: #f9faf0;
+        }
 </style>
 
 
@@ -69,6 +104,7 @@
 
     <!-- __________________________________________________________________________________________________ -->
 
+    <?php if ($service_id !== 7): ?>
     <div id="main-slider" class="splide">
         <div class="splide__track">
             <ul class="splide__list">
@@ -92,6 +128,34 @@
             </ul>
         </div>
     </div>
+<?php endif; ?>
+
+    <!-- _________________________________________________________________________________________________________ -->
+
+    <?php if ($service_id === 7): ?>
+    <div class="card-section container w-50 py-4">
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm p-4">
+                    <img src="style/images/IMG_1402.PNG" class="card-img-top" alt="Cemetery Plot">
+                    <div class="card-footer bg-success mt-4">
+                        <a class="custom-a" href="/buyer1"><h5 class="mb-0">Customer With Lot</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm p-4">
+                    <img src="style/images/IMG_1402.PNG" class="card-img-top" alt="Cemetery Plot">
+                    <div class="card-footer bg-success mt-4">
+                        <a class="custom-a" href="/buyer"><h5 class="mb-0">Customer At - Need</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
+
 
     <!-- ______________________________________________________________________________________________________ -->
 
@@ -141,9 +205,9 @@
             </div>
             <div class="modal-footer">
                 <?php if ($_SESSION): ?>
-                    <a href="/buyer" class="btn btn-success">Pay Now</a>
+                    <a href="/buyer" class="btn btn-success">Proceed</a>
                 <?php else: ?>
-                    <a href="/register" class="btn btn-success">Pay Now</a>
+                    <a href="/register" class="btn btn-success">Proceed</a>
                 <?php endif; ?>
             </div>
 
