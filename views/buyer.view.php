@@ -65,7 +65,101 @@
 
 <div class="container w-100 mx-auto">
   <form id="regForm" action="" class="row g-3 needs-validation" novalidate>
-    <!-- First Tab: Payment Details -->
+    <!-- First Tab: Lot Details -->
+    <div class="tab col-12">
+      <div class="d-flex">
+        <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
+        <h3 class="pt-4 fw-bold">LOT DETAILS</h3>
+      </div>
+
+      <div class="row mt-4">
+        <!-- Phase 1 -->
+        <div class="col-6">
+          <div class="form-group mb-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <label for="phase1">Phase 1:</label>
+              <input type="checkbox" id="phase1">
+            </div>
+
+            <div class="input mb-3">
+              <select class="form-select" id="serviceSelect" onchange="showServiceDetails()">
+                <option selected value="">Select Service</option>
+                <option value="lawn">Lawn (Size: 2.5 x 1m)</option>
+                <option value="garden">Garden of Eden (Size: 2.5 x 3m)</option>
+                <option value="family">Family Estate</option>
+                <option value="apartment">Apartment Type</option>
+                <option value="columbarium">Columbarium</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="col-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <label for="phase2">Phase 2:</label>
+            <input type="checkbox" id="phase2">
+          </div>
+
+          <!-- Lawn Service Details -->
+          <div id="lawnOptions" class="service-details" style="display: none;">
+            <h5>Select Lawn Type:</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lawnType" id="lawnRegular" value="regular">
+              <label class="form-check-label" for="lawnRegular">Regular</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lawnType" id="lawnPremium" value="premium">
+              <label class="form-check-label" for="lawnPremium">Premium</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lawnType" id="lawnPrime" value="prime">
+              <label class="form-check-label" for="lawnPrime">Prime</label>
+            </div>
+          </div>
+
+          <!-- Garden of Eden Service Details -->
+          <div id="gardenOptions" class="service-details" style="display: none;">
+            <div class="mb-3">
+              <label for="blockNumber" class="form-label">Block Number</label>
+              <input type="text" id="blockNumber" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="lotNumber" class="form-label">Lot Number</label>
+              <input type="text" id="lotNumber" class="form-control">
+            </div>
+          </div>
+
+          <!-- Family Estate (No details needed) -->
+          <div id="familyOptions" class="service-details" style="display: none;">
+            <p>No additional details needed for Family Estate.</p>
+          </div>
+
+          <!-- Apartment Service Details -->
+          <div id="apartmentOptions" class="service-details" style="display: none;">
+            <div class="mb-3">
+              <label for="blockNumberApartment" class="form-label">Block Number</label>
+              <input type="text" id="blockNumberApartment" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="unitNumber" class="form-label">Unit Number</label>
+              <input type="text" id="unitNumber" class="form-control">
+            </div>
+          </div>
+
+          <!-- Columbarium (No details needed) -->
+          <div id="columbariumOptions" class="service-details" style="display: none;">
+            <p>No additional details needed for Columbarium.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
     <div class="tab col-12">
       <div class="d-flex">
         <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
@@ -193,7 +287,7 @@
     </div>
 
     <!-- Navigation Buttons -->
-    <div style="overflow:auto;">
+    <div class="mt-5" style="overflow:auto;">
       <div style="float:right;">
         <button type="button" class="btn btn-success" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
         <button type="button" class="btn btn-success" id="nextBtn" onclick="nextPrev(1)">Next</button>
@@ -235,35 +329,44 @@
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
-      document.getElementById("regForm").submit();
+      // Instead of submitting the form, perform the redirection
+      window.location.href = "/payment"; 
       return false;
     }
     showTab(currentTab);
   }
 
   function validateForm() {
-    var x, y, i, valid = true;
-    x = document.getElementsByClassName("tab");
-    y = x[currentTab].getElementsByTagName("input");
-    for (i = 0; i < y.length; i++) {
-      if (y[i].value == "") {
-        y[i].className += " invalid";
-        valid = false;
-      }
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  
+  for (i = 0; i < y.length; i++) {
+    if (y[i].value == "") {
+      y[i].className += " invalid";
+      valid = false;
     }
-    if (valid) {
-      document.getElementsByClassName("step")[currentTab].className += " finish";
-    }
-    return valid;
   }
 
-  function fixStepIndicator(n) {
-    var i, x = document.getElementsByClassName("step");
+  // Check if currentTab is within bounds
+  if (valid && currentTab < document.getElementsByClassName("step").length) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid;
+}
+
+function fixStepIndicator(n) {
+  var i, x = document.getElementsByClassName("step");
+  
+  // Only proceed if n is in bounds
+  if (n < x.length) {
     for (i = 0; i < x.length; i++) {
       x[i].className = x[i].className.replace(" active", "");
     }
     x[n].className += " active";
   }
+}
+
 
   function addBeneficiaryRow() {
     var table = document.getElementById('beneficiaryTableBody');
@@ -277,6 +380,33 @@
 
     table.appendChild(row);
   }
+
 </script>
+
+<script>
+   function showServiceDetails() {
+    // Get the selected service
+    const selectedService = document.getElementById("serviceSelect").value;
+
+    // Hide all service details by default
+    document.querySelectorAll('.service-details').forEach(function(element) {
+      element.style.display = 'none';
+    });
+
+    // Show the appropriate service details based on selection
+    if (selectedService === 'lawn') {
+      document.getElementById('lawnOptions').style.display = 'block';
+    } else if (selectedService === 'garden') {
+      document.getElementById('gardenOptions').style.display = 'block';
+    } else if (selectedService === 'family') {
+      document.getElementById('familyOptions').style.display = 'block';
+    } else if (selectedService === 'apartment') {
+      document.getElementById('apartmentOptions').style.display = 'block';
+    } else if (selectedService === 'columbarium') {
+      document.getElementById('columbariumOptions').style.display = 'block';
+    }
+  }
+</script>
+
 
 <?php require 'partials/foot.php'; ?>
