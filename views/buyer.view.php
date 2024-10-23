@@ -29,7 +29,7 @@
     background-color: #bbbbbb;
     border: none;
     border-radius: 50%;
-    display: inline-block;
+    display: hidden;
     opacity: 0.5;
   }
 
@@ -67,20 +67,28 @@
   <form id="regForm" action="" class="row g-3 needs-validation" novalidate>
     <!-- First Tab: Lot Details -->
     <div class="tab col-12">
+      
       <div class="d-flex">
         <img style="width: 6rem;" src="style/images/logo_no_bg.png" alt="logo">
         <h3 class="pt-4 fw-bold">LOT DETAILS</h3>
       </div>
 
       <div class="row mt-4">
+        <div class="col-12 mb-3">
+          <div class="row">
+            <div class="col-6">
+              <label for="phase1">Phase 1:</label>
+              <input type="radio" name="phase" id="phase1">
+            </div>
+            <div class="col-6">
+              <label for="phase2">Phase 2:</label>
+              <input type="radio" name="phase" id="phase2">
+            </div>
+          </div>
+        </div>
         <!-- Phase 1 -->
         <div class="col-6">
           <div class="form-group mb-4">
-            <div class="d-flex align-items-center gap-2 mb-3">
-              <label for="phase1">Phase 1:</label>
-              <input type="checkbox" id="phase1">
-            </div>
-
             <div class="input mb-3">
               <select class="form-select" id="serviceSelect" onchange="showServiceDetails()">
                 <option selected value="">Select Service</option>
@@ -96,11 +104,6 @@
 
         <!-- Phase 2 -->
         <div class="col-6">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <label for="phase2">Phase 2:</label>
-            <input type="checkbox" id="phase2">
-          </div>
-
           <!-- Lawn Service Details -->
           <div id="lawnOptions" class="service-details" style="display: none;">
             <h5>Select Lawn Type:</h5>
@@ -153,12 +156,7 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
-
-
 
     <div class="tab col-12">
       <div class="d-flex">
