@@ -42,6 +42,7 @@ $router->patch('/admin/inquiries/update', 'admin/inquiries/update.php')->only('a
 // PAYMENT FORM for SERVICES ------------------------------------------------------------
 $router->get('/services', 'services.php');
 $router->get('/buyer', 'buyer.php')->only('auth');
+$router->get('/buyer1', 'buyer1.php')->only('auth');
 $router->get('/payment', 'payment.php')->only('auth');
 $router->get('/location', 'location.php');
 $router->get('/about', 'about.php');
