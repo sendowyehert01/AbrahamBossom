@@ -4,14 +4,14 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-  h3 {
+  .row h3 {
     font-size: 32px;
     color: #2f5a37;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
   }
 
-  p,
+  
   .li {
     font-weight: bold;
     margin-bottom: 5px;

@@ -18,6 +18,7 @@ $service_images = $db->query("
     WHERE i.service_id = :id
 ", ['id' => $_GET['id']])->get();  // fetch all related images
 
+
 view('service.view.php', [
   'heading' => $service['name'],
   'services' => $services,
