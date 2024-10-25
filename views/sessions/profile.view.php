@@ -48,51 +48,33 @@
   </div>
   <div class="container border-3 border rounded">
   <table class="table table-success mt-3 mb-3">
-  <thead>
-    <tr>
-      <th scope="col">Product/Services</th>
-      <th scope="col">Lot Type</th>
-      <th scope="col">Date Availed</th>
-      <th scope="col">Payment Method</th>
-      <th scope="col">Total</th>
-      <th scope="col">Reference No.</th>
-      <th scope="col">Status</th>
-      <th scope="col">Outstanding Balance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Family States</td>
-      <td>N/A</td>
-      <td>23/09/2024</td>
-      <td>PayPal</td>
-      <td>₱672230.00</td>
-      <td>TB12344</td>
-      <td>Pending</td>
-      <td>₱300.00</td>
-    </tr>
-    <tr>
-      <td>Family States</td>
-      <td>N/A</td>
-      <td>23/09/2024</td>
-      <td>PayPal</td>
-      <td>₱321321.00</td>
-      <td>TB12344</td>
-      <td>Pending</td>
-      <td>₱321.00</td>
-    </tr>
-    <tr>
-      <td>Family States</td>
-      <td>N/A</td>
-      <td>23/09/2024</td>
-      <td>PayPal</td>
-      <td>₱123123.00</td>
-      <td>TB12344</td>
-      <td>Pending</td>
-      <td>₱123.00</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th scope="col">Product/Services</th>
+        <th scope="col">Lot Type</th>
+        <th scope="col">Date Availed</th>
+        <th scope="col">Payment Method</th>
+        <th scope="col">Total</th>
+        <th scope="col">Reference No.</th>
+        <th scope="col">Status</th>
+        <th scope="col">Outstanding Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($transactions as $transaction) : ?>
+        <tr>
+          <td><?= $transaction['service_id'] ?></td>
+          <td><?= $transaction['type'] ?></td>
+          <td><?= $transaction['created_at'] ?></td>
+          <td><?= $transaction['mop'] ?></td>
+          <td>₱ <?= number_format($transaction['total_price'], 2) ?></td>
+          <td><?= $transaction['ref_id'] ?></td>
+          <td><?= $transaction['status'] ?></td>
+          <td>₱ <?= number_format($transaction['balance'], 2) ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
   </div>
 </div>
   

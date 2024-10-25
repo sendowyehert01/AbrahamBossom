@@ -1,0 +1,64 @@
+  /* Style the form */
+  #regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+  }
+
+  /* Mark input boxes that get an error on validation: */
+  /* input.invalid {
+    background-color: #ffdddd;
+  } */
+
+  /* Mark labels that get an error on validation: */
+  label.invalid {
+    color: red;
+  }
+
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+
+  /* Style for the step indicators (circles): */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: hidden;
+    opacity: 0.5;
+  }
+
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }
+
+  /* Style for Beneficiary table */
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    /* background-color: #1a8754; */
+  }

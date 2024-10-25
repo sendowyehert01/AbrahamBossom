@@ -90,8 +90,9 @@
                     <li class="nav-item mx-5">
                         <a class="nav-link <?= $current_page == '' ? 'active text-warning' : 'text-white' ?>" aria-current="page" href="/">HOME</a>
                     </li>
+
                     <li class="nav-item mx-5 dropdown">
-                        <a class="nav-link dropdown-toggle <?= strpos($current_page, 'services') !== false ? 'active text-warning' : 'text-white' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle <?= strpos($current_page, 's') !== false ? 'active text-warning' : 'text-white' ?>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             SERVICES
                         </a>
                         <ul class="dropdown-menu">
