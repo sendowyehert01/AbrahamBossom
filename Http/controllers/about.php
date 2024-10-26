@@ -11,5 +11,6 @@ $services = $db->query('SELECT * FROM services')->get();
 
 view('about.view.php', [
   'heading' => 'ABOUT US',
-  'services' => $services
+  'services' => $services,
+  'db' => $db
 ]);

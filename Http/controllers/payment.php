@@ -14,5 +14,6 @@ $transaction = null;
 view('payment.view.php', [
   'heading' => 'PAYMENT METHOD',
   'services' => $services,
-  'transaction' => $transaction
+  'transaction' => $transaction,
+  'db' => $db
 ]);

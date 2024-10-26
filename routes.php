@@ -70,6 +70,9 @@ $router->get('/forgot_multiform', 'forgot/multiform.php');
 $router->post('/forgot_multiform', 'forgot/multistore.php');
 
 
-$router->post('/send-notification', 'sendNotification.php');
+$router->post('/mark-as-unread', 'notifications/markAsUnread.php')->only('auth');
+$router->post('/soft-delete', 'notifications/softDelete.php')->only('auth');
+$router->get('/notification-count', 'notifications/notificationCount.php')->only('auth');
+
 
 ?>  

@@ -11,5 +11,6 @@ $services = $db->query('SELECT * FROM services')->get();
 
 view('plot_location.view.php', [
   'heading' => 'PLOT LOCATION',
-  'services' => $services
+  'services' => $services,
+  'db' => $db
 ]);
