@@ -5,6 +5,10 @@ h1 {
   font-weight: bold;
 }
 
+body {
+  background-color: white;
+}
+
 </style>
 
 <div class="jumbotron jumbotron-fluid">

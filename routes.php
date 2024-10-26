@@ -66,4 +66,8 @@ $router->get('/forgot_otp', 'forgot/otp.php')->only('otp');
 $router->post('/forgot_otp', 'forgot/otpstore.php')->only('otp');
 $router->get('/forgot_multiform', 'forgot/multiform.php');
 $router->post('/forgot_multiform', 'forgot/multistore.php');
+
+
+$router->post('/send-notification', 'sendNotification.php');
+
 ?>  

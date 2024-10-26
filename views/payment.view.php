@@ -4,13 +4,12 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-  .row h3 {
+  .choose {
     font-size: 32px;
     color: #2f5a37;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
   }
-
   
   .li {
     font-weight: bold;
@@ -26,9 +25,11 @@
   }
 
   .sidebar {
-    height: 23rem;
     padding: 20px;
-    /* width: 20rem; */
+  }
+
+  .payment-method-section {
+    margin-bottom: 1rem;
   }
 
   .payment-option {
@@ -82,91 +83,107 @@
 
   #offlinePaymentOptions p,
   .li {
-    font-size: 25px;
+    font-size: 20px;
+  }
+
+  .payment-details {
+    margin-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 </style>
 
 <div class="container-fluid pb-5" style="background-color: white;">
   <div class="container">
+   
+    
     <div class="row">
-      <!-- Sidebar -->
-      <h3 class="mb-3 mt-5">Choose Payment Method</h3>
-      <div class="col-md-3 col-lg-3 sidebar">
-        <div class="payment-option" onclick="selectPaymentMethod('online')">
-          <i class="fas fa-wallet" style="color: #4CAF50;"></i> <!-- Green -->
-          <h5>Online Payment</h5>
-        </div>
-        <div class="payment-option" onclick="selectPaymentMethod('banking')">
-          <i class="fas fa-university" style="color: #2196F3;"></i> <!-- Blue -->
-          <h5>Online Banking</h5>
-        </div>
-        <div class="payment-option" onclick="selectPaymentMethod('offline')">
-          <i class="fas fa-money-bill-wave" style="color: #FF9800;"></i> <!-- Orange -->
-          <h5>Offline Payment</h5>
-        </div>
+      <!-- Left side - Payment Methods -->
+      <div class="col-md-4">
+        <div class="sidebar">
+        <h4 class="mb-3 mt-5 choose">CHOOSE PAYMENT METHOD</h4>
+          <!-- Online Payment Section -->
+          <div class="payment-method-section">
+            <div class="payment-option" onclick="selectPaymentMethod('online')">
+              <i class="fas fa-wallet ms-3" style="color: #4CAF50;"></i>
+              <h5>Online Payment</h5>
+            </div>
+            <!-- Online Payment Options -->
+            <div id="onlinePaymentOptions" class="payment-details" style="display: none;">
+              <!-- <h4>E-Wallets</h4> -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="payment-option" onclick="selectWallet('gcash')">
+                    <img src="style/images/payment_logo/gcash.png" alt="GCash" class="img-fluid">
+                    <i class="fas fa-check check-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Online Banking Section -->
+          <div class="payment-method-section">
+            <div class="payment-option" onclick="selectPaymentMethod('banking')">
+              <i class="fas fa-university ms-3" style="color: #2196F3;"></i>
+              <h5>Online Banking</h5>
+            </div>
+            <!-- Online Banking Options -->
+            <div id="onlineBankingOptions" class="payment-details" style="display: none;">
+              <!-- <h4>Online Banking</h4> -->
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="payment-option" onclick="selectBank('bdo')">
+                    <img src="style/images/payment_logo/bdo.png" alt="BDO" class="img-fluid">
+                    <i class="fas fa-check check-icon"></i>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="payment-option" onclick="selectBank('unionbank')">
+                    <img src="style/images/payment_logo/unionbank.png" alt="UnionBank" class="img-fluid">
+                    <i class="fas fa-check check-icon"></i>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="payment-option" onclick="selectBank('bpi')">
+                    <img src="style/images/payment_logo/bpi.png" alt="BPI" class="img-fluid">
+                    <i class="fas fa-check check-icon"></i>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="payment-option" onclick="selectBank('chinabank')">
+                    <img src="style/images/payment_logo/chinabank.png" alt="ChinaBank" class="img-fluid">
+                    <i class="fas fa-check check-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offline Payment Section -->
+          <div class="payment-method-section">
+            <div class="payment-option" onclick="selectPaymentMethod('offline')">
+              <i class="fas fa-money-bill-wave ms-3" style="color: #FF9800;"></i>
+              <h5>Offline Payment</h5>
+            </div>
+            <!-- Offline Payment Options -->
+            <div id="offlinePaymentOptions" class="payment-details" style="display: none;">
+              <!-- <h4>Offline Payment</h4> -->
+              <h3 class="pt-3 ">ABMG HEAD OFFICE</h3>
+              <p class="">You can pay directly in our office address:</p>
+              <p class="li ">KM 49 Aguinaldo Highway, Silang, Cavite</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Main content -->
-      <div class="col-md-9 col-lg-9 p-4">
-        <!-- Online Payment Options -->
-        <div id="onlinePaymentOptions" style="display: none;">
-          <h4>E-Wallets</h4>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="payment-option" onclick="selectWallet('gcash')">
-                <img src="style/images/payment_logo/gcash.png" alt="GCash" class="img-fluid">
-                <i class="fas fa-check check-icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Online Banking Options -->
-        <div id="onlineBankingOptions" style="display: none;">
-          <h4>Online Banking</h4>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="payment-option" onclick="selectBank('bdo')">
-                <img src="style/images/payment_logo/bdo.png" alt="BDO" class="img-fluid">
-                <i class="fas fa-check check-icon"></i>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="payment-option" onclick="selectBank('unionbank')">
-                <img src="style/images/payment_logo/unionbank.png" alt="UnionBank" class="img-fluid">
-                <i class="fas fa-check check-icon"></i>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="payment-option" onclick="selectBank('bpi')">
-                <img src="style/images/payment_logo/bpi.png" alt="BPI" class="img-fluid">
-                <i class="fas fa-check check-icon"></i>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="payment-option" onclick="selectBank('chinabank')">
-                <img src="style/images/payment_logo/chinabank.png" alt="ChinaBank" class="img-fluid">
-                <i class="fas fa-check check-icon"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Offline Payment Options -->
-        <div id="offlinePaymentOptions" style="display: none;">
-          <h4>Offline Payment</h4>
-          <h2 class="pt-5 text-center">ABMG HEAD OFFICE</h2>
-          <p class="ms-3 text-center">You can pay directly in our office address:</p>
-          <p class="ms-5 li text-center">KM 49 Aguinaldo Highway, Silang, Cavite</p>
-        </div>
+      <!-- Right side - Payment Form -->
+      <div class="col-md-8">
+        <?php require 'forms/payment_form.php'; ?>
       </div>
     </div>
   </div>
 </div>
-
-
-<?php require 'forms/payment_form.php'; ?>
 
 <?php require 'partials/foot.php'; ?>
 
@@ -176,7 +193,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title mt-4" id="staticBackdropLabel">Payment Instructions</h5>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body" id="modalContent">
                 <!-- Content will be dynamically inserted here -->
@@ -189,7 +205,6 @@
 </div>
 
 <script>
-
 let paymentModal;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -197,13 +212,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function selectPaymentMethod(method) {
-    document.querySelectorAll('.sidebar .payment-option').forEach(el => el.classList.remove('selected'));
-    event.currentTarget.classList.add('selected');
-
+    // Hide all payment option sections first
     document.getElementById('onlinePaymentOptions').style.display = 'none';
     document.getElementById('onlineBankingOptions').style.display = 'none';
     document.getElementById('offlinePaymentOptions').style.display = 'none';
 
+    // Remove selected class from all payment options
+    document.querySelectorAll('.sidebar .payment-option').forEach(el => el.classList.remove('selected'));
+    event.currentTarget.classList.add('selected');
+
+    // Show the selected payment options section
     if (method === 'online') {
         document.getElementById('onlinePaymentOptions').style.display = 'block';
     } else if (method === 'banking') {
@@ -285,6 +303,4 @@ function showPaymentInstructions(method) {
     document.getElementById('modalContent').innerHTML = content;
     paymentModal.show();
 }
-</script>
-
 </script>

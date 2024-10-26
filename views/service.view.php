@@ -63,7 +63,7 @@
             padding: 10px;
             text-align: center;
         }
-        .card img {
+        .cards img {
             height: 250px;
             object-fit: cover;
             width: 100%;
@@ -89,7 +89,7 @@
             color: white;
         }
 
-        .card {
+        .cards {
             background-color: #f9faf0;
         }
 </style>
@@ -99,7 +99,7 @@
 
 <div class="row d-flex justify-content-center pb-5" style="background-color: #f9faf0;">
     <div class="top">
-        <p style="font-family: 'Proxima Nova', sans-serif;"><?= $service_description ?></p>
+        <p><?= $service_description ?></p>
     </div>
 
     <!-- __________________________________________________________________________________________________ -->
@@ -136,7 +136,7 @@
     <div class="card-section container w-50 py-4">
         <div class="row g-4">
             <div class="col-12 col-md-6">
-                <div class="card shadow-sm p-4">
+                <div class="card cards shadow-sm p-4">
                     <img src="style/images/IMG_1402.PNG" class="card-img-top" alt="Cemetery Plot">
                     <div class="card-footer bg-success mt-4">
                         <a class="custom-a" href="/buyer1"><h5 class="mb-0">Customer With Lot</h5></a>
@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <div class="card shadow-sm p-4">
+                <div class="card cards shadow-sm p-4">
                     <img src="style/images/IMG_1402.PNG" class="card-img-top" alt="Cemetery Plot">
                     <div class="card-footer bg-success mt-4">
                         <a class="custom-a" href="/buyer"><h5 class="mb-0">Customer At - Need</h5></a>
@@ -182,7 +182,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ratesModalLabel">Rates</h5>
+                <h5 class="modal-title mt-4" id="ratesModalLabel">Rates</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

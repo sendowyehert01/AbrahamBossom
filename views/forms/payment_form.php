@@ -1,3 +1,5 @@
+
+
 <style>
     .form-title {
         text-align: center;
@@ -33,7 +35,7 @@
         color: red;
     }
 
-    input[type="text"],
+    /* input[type="text"],
     input[type="email"],
     input[type="tel"],
     input[type="file"] {
@@ -43,7 +45,7 @@
         border: 1px solid #ccc;
         background-color: #f2eded;
         box-sizing: border-box;
-    }
+    } */
 
     input:focus {
         border-color: #2f5a37;
@@ -69,11 +71,23 @@
         background-color: #3c7b47;
         border-color: #3c7b47;
     }
+
+
+    .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
 </style>
 
-<div class="container-fluid" style="background-color: #f3f7f0;">
+<div class="container-fluid">
     <div class="container">
-        <h2 class="text-center form-title pt-5">PROOF OF PAYMENT</h2>
+        <h2 class="text-center form-title mt-5">PROOF OF PAYMENT</h2>
         <hr class="custom-hr">
         <p class="text-center form-subtitle mb-4 mt-5">Send us your proof of payment and we will get back to you as soon as possible.</p>
 
@@ -133,7 +147,8 @@
         </form>
     </div>
 </div>
-
+<!-- Add Pusher JavaScript CDN -->
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
 <script>
     (function() {
         'use strict'
@@ -152,4 +167,5 @@
                 }, false)
             })
     })()
+
 </script>
