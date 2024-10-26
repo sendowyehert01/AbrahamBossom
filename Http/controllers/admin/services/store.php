@@ -26,7 +26,7 @@ $errors = [];
   }
 
   if (empty($errors)) {
-    $db->query("INSERT INTO services(name, description) VALUES(:name, :description)", ['name' => $_POST['name'] , 'description'=> $_POST['description']]);
+    $db->query("INSERT INTO services(name, description, type) VALUES(:name, :description, :type)", ['name' => $_POST['name'] , 'description'=> $_POST['description'], 'type'=> $_POST['type']]);
   }
 
   header('location: /admin/services');

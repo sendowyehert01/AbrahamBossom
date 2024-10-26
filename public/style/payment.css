@@ -1,0 +1,71 @@
+
+.form-title {
+  text-align: center;
+  font-size: 32px;
+  color: #2f5a37;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.custom-hr {
+  width: 14rem;
+  margin: 10px auto;
+  border: 3px solid #2f5a37;
+}
+
+.form-subtitle {
+  color: #808080;
+  font-style: italic;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.required {
+  color: red;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f2eded;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #2f5a37;
+  outline: none;
+}
+
+#note {
+  background-color: #f2eded;
+}
+
+#note:focus {
+  border-color: #2f5a37;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn-success:hover {
+  background-color: #3c7b47;
+  border-color: #3c7b47;
+}

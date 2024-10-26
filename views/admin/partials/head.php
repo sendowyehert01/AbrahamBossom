@@ -69,7 +69,7 @@
                         </li>
                         <li>
                             <a href="/admin/orders" class="nav-link px-0 align-middle <?= strpos($current_page, 'orders') !== false ? 'active active-link' : 'text-white' ?>">
-                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Sales</span></a>
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Transactions</span></a>
                         </li>
 
 

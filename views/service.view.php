@@ -104,7 +104,7 @@
 
     <!-- __________________________________________________________________________________________________ -->
 
-    <?php if ($service_id !== 7): ?>
+<?php if ($service_id !== 7): ?>
     <div id="main-slider" class="splide">
         <div class="splide__track">
             <ul class="splide__list">
@@ -132,7 +132,7 @@
 
     <!-- _________________________________________________________________________________________________________ -->
 
-    <?php if ($service_id === 7): ?>
+<?php if ($_GET['id'] == 7) : ?>
     <div class="card-section container w-50 py-4">
         <div class="row g-4">
             <div class="col-12 col-md-6">
