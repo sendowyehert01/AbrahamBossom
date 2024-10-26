@@ -39,9 +39,9 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-.card-text {
+/* .card-text {
   font-family: 'Proxima Nova', sans-serif;
-}
+} */
 
 
 

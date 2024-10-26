@@ -19,6 +19,10 @@
 
     <style>
 
+    * {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
     body {
         overflow-x: hidden;
     }

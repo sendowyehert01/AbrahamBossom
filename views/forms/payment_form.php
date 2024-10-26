@@ -1,8 +1,93 @@
-<link rel="stylesheet" href="style/payment.css">
 
-<div class="container-fluid" style="background-color: #f3f7f0;">
+
+<style>
+    .form-title {
+        text-align: center;
+        font-size: 32px;
+        color: #2f5a37;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .custom-hr {
+        width: 14rem;
+        margin: 10px auto;
+        border: 3px solid #2f5a37;
+    }
+
+    .form-subtitle {
+        color: #808080;
+        font-style: italic;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .required {
+        color: red;
+    }
+
+    /* input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background-color: #f2eded;
+        box-sizing: border-box;
+    } */
+
+    input:focus {
+        border-color: #2f5a37;
+        outline: none;
+    }
+
+    #note {
+        background-color: #f2eded;
+    }
+
+    #note:focus {
+        border-color: #2f5a37;
+        outline: none;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .btn-success:hover {
+        background-color: #3c7b47;
+        border-color: #3c7b47;
+    }
+
+
+    .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+</style>
+
+<div class="container-fluid">
     <div class="container">
-        <h2 class="text-center form-title pt-5">PROOF OF PAYMENT</h2>
+        <h2 class="text-center form-title mt-5">PROOF OF PAYMENT</h2>
         <hr class="custom-hr">
         <p class="text-center form-subtitle mb-4 mt-5">Send us your proof of payment and we will get back to you as soon as possible.</p>
 
@@ -125,7 +210,8 @@
         </form>
     </div>
 </div>
-
+<!-- Add Pusher JavaScript CDN -->
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
 <script>
     (function() {
         'use strict'
@@ -137,10 +223,12 @@
                         event.preventDefault()
                         event.stopPropagation()
                     } else {
-                      form.submit();
+                        event.preventDefault()
+                        alert('Form submitted successfully')
                     }
                     form.classList.add('was-validated')
                 }, false)
             })
     })()
+
 </script>

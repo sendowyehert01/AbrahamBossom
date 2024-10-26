@@ -1,8 +1,9 @@
 <?php require base_path('./views/admin/partials/head.php') ?>
 <?php require base_path('./views/admin/services/create.view.php') ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.1/css/all.min.css" integrity="sha384-1234567890abcdef" crossorigin="anonymous">
+
 
 <div class="col-10 mt-3">
-
   <!-- Button trigger modal -->
   <div class="mb-3">
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">
@@ -18,7 +19,6 @@
       <table id="serviceTable" class="table table-hover table-responsive-sm align-middle">
         <thead class="text-white" style="background-color: #a5ccba">
           <tr class="text-center">
-            <th>Type</th>
             <th>Service Name</th>
             <th>Description</th>
             <th>Actions</th>
@@ -28,58 +28,38 @@
           <?php foreach($services as $service) : ?>
             <tr>
               <td>
-                <p><?= $service['type'] ?></p>
-              </td>
-              <td>
                 <a href="/admin/service?id=<?= $service['id'] ?>" class="text-decoration-none text-dark">
                   <?= htmlspecialchars($service['name']) ?>
                 </a>
               </td>
-              <td class="w-50"><?= $service['description'] ?></td>
+              <td><?= $service['description'] ?></td>
               <td class="text-center">
-                  <div class="m-1">
-                    <a class="btn btn-secondary" href="/admin/services/upload?id=<?= $service['id'] ?>">
-                      <i class="fas fa-edit"></i> Upload
-                    </a>
-                  </div>
-                  <div class="m-1">
-                    <a class="btn btn-secondary" href="/admin/services/edit?id=<?= $service['id'] ?>">
-                      <i class="fas fa-edit"></i> Update
-                    </a>
-                  </div>
-                  <div class="m-1">
-                    <form method="POST" action="/admin/service?id=<?= $service['id'] ?>" onsubmit="return confirm('Are you sure you want to delete this service?');">
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit" class="btn btn-danger">
-                        <i class="fas fa-trash-alt"></i> Archieve
-                      </button>
-                    </form>
-                  </div>
-                <!-- <div class="dropdown">
-                  <button class="btn btn-sm btn-secondary dropdown-toggle btn-success" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-cogs"></i> Actions
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                    <li>
-                      <a class="dropdown-item" href="/admin/services/upload?id=<?= $service['id'] ?>">
-                        <i class="fas fa-edit"></i> Upload
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="/admin/services/edit?id=<?= $service['id'] ?>">
-                        <i class="fas fa-edit"></i> Update
-                      </a>
-                    </li>
-                    <li>
-                      <form method="POST" action="/admin/service?id=<?= $service['id'] ?>" onsubmit="return confirm('Are you sure you want to delete this service?');">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="dropdown-item text-danger">
-                          <i class="fas fa-trash-alt"></i> Archieve
-                        </button>
-                      </form>
-                    </li>
-                  </ul>
-                </div> -->
+                <div class="btn-group" role="group" aria-label="Service actions">
+                  <a href="/admin/services/upload?id=<?= $service['id'] ?>" 
+                     class="btn btn-sm btn-success me-1" 
+                     title="Upload">
+                    <i class="fas fa-upload"></i>
+                    Upload
+                  </a>
+                  <a href="/admin/services/edit?id=<?= $service['id'] ?>" 
+                     class="btn btn-sm btn-primary me-1" 
+                     title="Update">
+                    <i class="fas fa-edit"></i>
+                    Update
+                  </a>
+                  <form method="POST" 
+                        action="/admin/service?id=<?= $service['id'] ?>" 
+                        onsubmit="return confirm('Are you sure you want to delete this service?');"
+                        class="d-inline">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" 
+                            class="btn btn-sm btn-danger" 
+                            title="Archive">
+                      <i class="fas fa-archive"></i>
+                      Archive
+                    </button>
+                  </form>
+                </div>
               </td>
             </tr>
           <?php endforeach; ?>
