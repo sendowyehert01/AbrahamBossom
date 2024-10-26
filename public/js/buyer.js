@@ -8,7 +8,7 @@ function showServiceDetails() {
   });
 
   // Show the appropriate service details based on selection
-  if (selectedService === 'lawn') 
+  if (selectedService === '1') 
   {
     document.getElementById('lawnOptions').style.display = 'block';
     document.getElementById('gardenOptions').innerHTML = ``;
@@ -27,7 +27,7 @@ function showServiceDetails() {
                 <input class="form-check-input p-3 required" type="radio" name="type" id="lawnPrime" value="prime">
                 <label class="form-check-label p-3" for="lawnPrime">Prime</label>
               </div>`;
-  } else if (selectedService === 'garden') {
+  } else if (selectedService === '2') {
         document.getElementById('gardenOptions').style.display = 'block';
         document.getElementById('lawnOptions').innerHTML = ``;
         document.getElementById('apartmentOptions').innerHTML = ``;
@@ -40,7 +40,7 @@ function showServiceDetails() {
                 <label for="lotNumber" class="form-label">Lot Number</label>
                 <input type="text" id="lotNumber" name="lot" class="form-control">
               </div>`
-  } else if (selectedService === 'family') {
+  } else if (selectedService === '4') {
         document.getElementById('familyOptions').style.display = 'block';
         document.getElementById('lawnOptions').innerHTML = ``;
         document.getElementById('gardenOptions').innerHTML = ``;
@@ -58,7 +58,7 @@ function showServiceDetails() {
                 <label for="unitNumber" class="form-label">Unit Number</label>
                 <input type="text" id="unitNumber" name="lot" class="form-control">
               </div>`
-  } else if (selectedService === 'columbarium') {
+  } else if (selectedService === '3') {
         document.getElementById('columbariumOptions').style.display = 'block';
         document.getElementById('gardenOptions').innerHTML = ``;
         document.getElementById('apartmentOptions').innerHTML = ``;

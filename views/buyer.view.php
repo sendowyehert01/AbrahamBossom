@@ -36,11 +36,14 @@
       <div class="col-6">  
         <select class="form-select" id="serviceSelect" name="selectedService" onchange="showServiceDetails()" required>
           <option selected value="">Select Service</option>
-          <option value="lawn">Lawn (Size: 2.5 x 1m)</option>
+          <?php foreach ($burial_lots as $lot) :?>
+            <option value="<?= $lot['id'] ?>"><?= $lot['name']?></option>
+          <?php endforeach; ?>
+          <!-- <option value="lawn">Lawn (Size: 2.5 x 1m)</option>
           <option value="garden">Garden of Eden (Size: 2.5 x 3m)</option>
           <option value="family">Family Estate</option>
           <option value="apartment">Apartment Type</option>
-          <option value="columbarium">Columbarium</option>
+          <option value="columbarium">Columbarium</option> -->
         </select>
         <div class="invalid-feedback">Service is required</div>
       </div>

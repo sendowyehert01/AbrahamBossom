@@ -17,6 +17,17 @@
             <?php endif; ?>
           </div>
           <div class="col-md-12">
+            <label class="form-label">Service Type</label>
+            <select class="form-select" name="type" required>
+              <option selected value="">Select Service Type</option>
+              <option value="Burial Lots">Burial Lots</option>
+              <option value="Funeral Services">Funeral Services</option>
+            </select>
+            <?php if (isset($errors['type'])) : ?>
+                <span class="text-danger"><?= $errors['type'] ?></span>
+            <?php endif; ?>
+          </div>
+          <div class="col-md-12">
             <label class="form-label">Description</label>
             <textarea 
                       id="description" 

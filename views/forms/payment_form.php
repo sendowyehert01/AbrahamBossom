@@ -7,7 +7,7 @@
         <p class="text-center form-subtitle mb-4 mt-5">Send us your proof of payment and we will get back to you as soon as possible.</p>
 
         <form id="paymentForm" class="needs-validation" action="/payment" method="POST" novalidate>
-            <?php if ($transaction) : ?>
+            <?php if (isset($transaction)) : ?>
               <input type="hidden" name="formType" value="1">
               <input type="hidden" name="phase" value="<?= $transaction['phase'] ?? null ?>">
               <input type="hidden" name="selectedService" value="<?= $transaction['selectedService'] ?? null ?>">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <?php if ($transaction) : ?>
+                        <?php if (isset($transaction['firstName']) && isset($transaction['lastName'])) : ?>
                           <input type="text" class="form-control" id="fullName" placeholder="Enter your name" name="fullName" value="<?= ($transaction['firstName'] . ' ' . $transaction['middle'] . ' ' . $transaction['lastName']) ?? null ?>" required>
                         <?php else : ?>
                           <input type="text" class="form-control" id="fullName" placeholder="Enter your name" name="fullName" required>
@@ -55,7 +55,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <?php if ($transaction) : ?>
+                        <?php if (isset($transaction['email'])) : ?>
                           <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" value="<?= $transaction['email'] ?? null ?>" required>
                         <?php else : ?>
                           <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
@@ -66,7 +66,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="mb-3">
                         <label for="contact" class="form-label">Contact Number</label>
-                        <?php if ($transaction) : ?>
+                        <?php if (isset($transaction['contactNo'])) : ?>
                           <input type="tel" class="form-control" id="contact" placeholder="+639" name="contactNo" value="<?= $transaction['contactNo'] ?? null ?>" required>
                         <?php else : ?>
                           <input type="tel" class="form-control" id="contact" placeholder="+639" name="contactNo" required>
@@ -91,7 +91,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="mb-3">
                         <label for="referenceNo" class="form-label">Reference No.</label>
-                        <?php if ($transaction) : ?>
+                        <?php if (isset($transaction['refId'])) : ?>
                           <input type="text" class="form-control" id="referenceNo" placeholder="Enter reference number" name="refId" value="<?= $transaction['refId'] ?? null ?>" required>
                         <?php else : ?>
                           <input type="text" class="form-control" id="referenceNo" placeholder="Enter reference number" name="refId" required>
@@ -104,6 +104,7 @@
                         <div class="invalid-feedback">Reference No. is required</div>
                     </div>
                 </div>
+                <?php if (isset($transaction['downpayment'])) : ?>
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label for="amount" class="form-label">Amount</label>
@@ -111,6 +112,7 @@
                         <div class="invalid-feedback">Amount of Payment is required</div>
                     </div>
                 </div>
+                <?php endif;?>
                 <div class="col-lg-6">
                     <div class="mb-3">
                         <label for="proofOfPayment" class="form-label">Proof of Payment</label>
