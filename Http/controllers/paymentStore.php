@@ -18,7 +18,7 @@ $pusher = new Pusher\Pusher(
     '1885932',
     [
         'cluster' => 'ap1',
-        'useTLS' => true
+        'useTLS' => true,
     ]
 );
 
@@ -46,7 +46,6 @@ if (empty($errors)) {
                     'heading' => "PAYMENT METHOD",
                     'errors' => $errors,
                     'transaction' => null,
-                    'db' => $db
                 ]);
             }
         }

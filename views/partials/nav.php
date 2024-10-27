@@ -40,7 +40,11 @@
 
             <div class="d-flex gap-3">
 
-                <?php
+                <?php   
+                use Core\App;
+
+                $db = App::resolve('Core\Database');
+
                 // Fetch notifications from the database for the currently logged-in user
                 if (isset($_SESSION['user'])) {
                     $userId = $_SESSION['user']['id'];
@@ -210,4 +214,3 @@
         counterElement.textContent = currentCount + 1;
     }
 </script>
-
