@@ -14,5 +14,6 @@ $burial_lots = $db->query('SELECT * FROM services WHERE type = "Burial Lots"')->
 view('buyer.view.php', [
   'heading' => 'Form',
   'services' => $services,
-  'burial_lots' => $burial_lots
+  'burial_lots' => $burial_lots,
+  'db' => $db
 ]);

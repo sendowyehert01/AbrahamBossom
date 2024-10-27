@@ -6,17 +6,16 @@
 
 
     .notification-counter {
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 2px 6px;
-    position: absolute;
-    top: 10px;
-    right: 0;
-    transform: translate(50%, -50%);
-}
-
+        background-color: red;
+        color: white;
+        font-size: 12px;
+        border-radius: 50%;
+        padding: 2px 6px;
+        position: absolute;
+        top: 10px;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
 </style>
 
 <div class="sticky-top bg-white p-0 m-0">
@@ -38,17 +37,47 @@
                     </div>
                 </div>
             </div>
-            <button>submit</button>
 
             <div class="d-flex gap-3">
+
+                <?php
+                // Fetch notifications from the database for the currently logged-in user
+                if (isset($_SESSION['user'])) {
+                    $userId = $_SESSION['user']['id'];
+                    $notifications = $db->query("SELECT * FROM notifications WHERE user_id = :user_id ORDER BY timestamp DESC", [
+                        'user_id' => $userId
+                    ])->findAll();
+                } else {
+                    $notifications = [];
+                }
+                ?>
+
                 <div class="dropdown">
                     <i class="bi bi-bell icons" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                    <span id="notificationCounter" class="notification-counter">0</span>
+                    <span id="notificationCounter" class="notification-counter"><?= count($notifications) ?></span>
                     <ul class="dropdown-menu dropdown-notif" aria-labelledby="notificationDropdown">
                         <div class="notif">
                             <p>Notification</p>
                         </div>
                         <!-- Notification items will be appended here -->
+                        <?php foreach ($notifications as $notification) : ?>
+                            <li class="d-flex align-items-center dropdown-list">
+                                <div class="notif-container">
+                                    <img class="notif-img" src="/assets/img/bell-notif.png" alt="Notification">
+                                </div>
+                                <div class="dropdown-text">
+                                    <a class="dropdown-item drop-items" href="#"><?= $notification['message'] ?></a>
+                                    <p class="drop-text drop-item">You have a new notification</p>
+                                </div>
+                                <div class="dropdown">
+                                    <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown"></i>
+                                    <ul class="dropdown-menu drop-head">
+                                        <li class="li-item"><a class="dropdown-item head-item" href="#">Mark as Read</a></li>
+                                        <li class="li-item"><a class="dropdown-item head-item" href="#">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
                         <div class="notif-button" style="margin-top:2px;width: 100%;">
                             <button>
                                 <p>See all notifications</p>
@@ -56,6 +85,8 @@
                         </div>
                     </ul>
                 </div>
+
+
 
                 <i class="bi bi-search icons"></i>
                 <div class="dropdown">
@@ -128,82 +159,55 @@
 
 
 <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-
 <script>
-// Initialize Pusher
-const pusher = new Pusher('000f37df564364d3eeac', {
-  cluster: 'ap1',
-  encrypted: true
-});
-
-// Subscribe to the 'payment-channel'
-const channel = pusher.subscribe('payment-channel');
-
-// Listen for the 'pending-payment' event
-channel.bind('pending-payment', function(data) {
-  console.log(data.message);
-
-  // Insert new notification into dropdown
-  const notificationList = document.querySelector('.dropdown-notif');
-  
-  // Create a new notification item dynamically
-  const newNotification = `
-    <li class="d-flex align-items-center dropdown-list">
-        <div class="notif-container">
-            <img class="notif-img" src="/assets/img/bell-notif.png" alt="Notification">
-        </div>
-        <div class="dropdown-text">
-            <a class="dropdown-item drop-items" href="#">${data.message}</a>
-            <p class="drop-text drop-item">You have a new notification</p>
-        </div>
-        <div class="dropdown">
-            <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown"></i>
-            <ul class="dropdown-menu drop-head">
-                <li class="li-item"><a class="dropdown-item head-item" href="#">Mark as Read</a></li>
-                <li class="li-item"><a class="dropdown-item head-item" href="#">Delete</a></li>
-            </ul>
-        </div>
-    </li>
-  `;
-
-  // Append the new notification to the notification list
-  notificationList.insertAdjacentHTML('beforeend', newNotification);
-
-  // Update notification counter
-  updateNotificationCounter();
-});
-
-// Function to update the notification counter
-function updateNotificationCounter() {
-    const counterElement = document.getElementById('notificationCounter');
-    let currentCount = parseInt(counterElement.textContent);
-    counterElement.textContent = currentCount + 1;
-}
-
-
-    // Add click event listener to submit button
-    document.querySelector('button').addEventListener('click', async function() {
-        try {
-            // Send notification via fetch request
-            const response = await fetch('/send-notification', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: 'New submission received!'
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const data = await response.json();
-            console.log('Notification sent:', data);
-
-        } catch (error) {
-            console.error('Error sending notification:', error);
-        }
+    // Initialize Pusher
+    const pusher = new Pusher('000f37df564364d3eeac', {
+        cluster: 'ap1',
+        encrypted: true
     });
+
+    // Subscribe to the 'payment-channel'
+    const channel = pusher.subscribe('payment-channel');
+
+    // Listen for the 'pending-payment' event
+    channel.bind('pending-payment', function(data) {
+        console.log(data.message);
+
+        // Insert new notification into dropdown
+        const notificationList = document.querySelector('.dropdown-notif');
+
+        // Create a new notification item dynamically
+        const newNotification = `
+            <li class="d-flex align-items-center dropdown-list">
+                <div class="notif-container">
+                    <img class="notif-img" src="/assets/img/bell-notif.png" alt="Notification">
+                </div>
+                <div class="dropdown-text">
+                    <a class="dropdown-item drop-items" href="#">${data.message}</a>
+                    <p class="drop-text drop-item">You have a new notification</p>
+                </div>
+                <div class="dropdown">
+                    <i class="bi bi-three-dots-vertical d-flex align-items-center drop-bi" id="notificationDropdown" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu drop-head">
+                        <li class="li-item"><a class="dropdown-item head-item" href="#">Mark as Read</a></li>
+                        <li class="li-item"><a class="dropdown-item head-item" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </li>
+        `;
+
+        // Append the new notification to the notification list
+        notificationList.insertAdjacentHTML('beforeend', newNotification);
+
+        // Update notification counter
+        updateNotificationCounter();
+    });
+
+    // Function to update the notification counter
+    function updateNotificationCounter() {
+        const counterElement = document.getElementById('notificationCounter');
+        let currentCount = parseInt(counterElement.textContent);
+        counterElement.textContent = currentCount + 1;
+    }
 </script>
+

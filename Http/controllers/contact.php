@@ -11,5 +11,6 @@ $services = $db->query('SELECT * FROM services')->get();
 
 view('contact.view.php', [
   'heading' => 'CONTACT',
-  'services' => $services
+  'services' => $services,
+  'db' => $db
 ]);

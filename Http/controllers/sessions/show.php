@@ -19,5 +19,6 @@ authorize($user['id'] === $currentUser);
 view('sessions/profile.view.php', [
   'services' => $services,
   'user' => $user,
-  'transactions' => $transactions
+  'transactions' => $transactions,
+  'db' => $db
 ]);

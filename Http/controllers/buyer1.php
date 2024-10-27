@@ -11,5 +11,6 @@ $services = $db->query('SELECT * FROM services')->get();
 
 view('buyer1.view.php', [
   'heading' => 'Form',
-  'services' => $services
+  'services' => $services,
+  'db' => $db
 ]);
